@@ -28,12 +28,12 @@ class CATextLayerViewController: UIViewController {
     case Start, Middle, End
   }
   
+  var noteworthyLightFont: AnyObject?
+  var helveticaFont: AnyObject?
   let baseFontSize: CGFloat = 24.0
   let textLayer = CATextLayer()
   var fontSize: CGFloat = 24.0
-  
-  var noteworthyLightFont: AnyObject?
-  var helveticaFont: AnyObject?
+  var previouslySelectedTruncationMode = TruncationMode.End
   
   // MARK: - Quick reference
   
@@ -92,7 +92,6 @@ class CATextLayerViewController: UIViewController {
   @IBAction func fontSizeSliderChanged(sender: UISlider) {
     fontSizeSliderValueLabel.text = "\(Int(sender.value * 100.0))%"
     fontSize = baseFontSize * CGFloat(sender.value)
-    viewDidLayoutSubviews()
   }
   
   @IBAction func wrapTextSwitchChanged(sender: UISwitch) {
@@ -100,13 +99,16 @@ class CATextLayerViewController: UIViewController {
     textLayer.alignmentMode = kCAAlignmentLeft
     
     if sender.on {
+      if let truncationMode = TruncationMode(rawValue: truncationModeSegmentedControl.selectedSegmentIndex) {
+        previouslySelectedTruncationMode = truncationMode
+      }
+      
       truncationModeSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
       textLayer.wrapped = true
     } else {
       textLayer.wrapped = false
+      truncationModeSegmentedControl.selectedSegmentIndex = previouslySelectedTruncationMode.rawValue
     }
-    
-    viewDidLayoutSubviews()
   }
   
   @IBAction func alignmentModeSegmentedControlChanged(sender: UISegmentedControl) {
@@ -127,8 +129,6 @@ class CATextLayerViewController: UIViewController {
     default:
       textLayer.alignmentMode = kCAAlignmentLeft
     }
-    
-    viewDidLayoutSubviews()
   }
   
   @IBAction func truncationModeSegmentedControlChanged(sender: UISegmentedControl) {
@@ -147,8 +147,6 @@ class CATextLayerViewController: UIViewController {
     default:
       textLayer.truncationMode = kCATruncationNone
     }
-    
-    viewDidLayoutSubviews()
   }
   
 }
