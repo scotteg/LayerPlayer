@@ -20,9 +20,7 @@ class AVPlayerLayerViewController: UIViewController {
   enum Rate: Int {
     case SlowForward, Normal, FastForward
   }
-  
-  // TODO: Save rate selected and set player to that rate when play is resumed
-  
+    
   let playerLayer = AVPlayerLayer()
   var player: AVPlayer {
     return playerLayer.player

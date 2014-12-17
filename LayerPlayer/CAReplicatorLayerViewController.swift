@@ -34,8 +34,6 @@ class CAReplicatorLayerViewController: UIViewController {
     replicatorLayer.frame = viewForReplicatorLayer.bounds
     let count = instanceCountSlider.value
     replicatorLayer.instanceCount = Int(count)
-    let delay = instanceDelaySlider.value / count
-    replicatorLayer.instanceDelay = CFTimeInterval(delay)
     replicatorLayer.preservesDepth = false
     replicatorLayer.instanceColor = whiteColor
     replicatorLayer.instanceRedOffset = offsetValueForSwitch(offsetRedSwitch)

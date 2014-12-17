@@ -13,9 +13,6 @@ class TilingViewForImage: UIView {
   let sideLength = CGFloat(640.0)
   let fileName = "windingRoad"
   let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as String
-  var tileNamePrefix: String {
-    return fileName
-  }
   
   override class func layerClass() -> AnyClass {
     return TiledLayer.self
@@ -50,7 +47,7 @@ class TilingViewForImage: UIView {
   }
   
   func imageForTileAtColumn(column: Int, row: Int) -> UIImage? {
-    let filePath = "\(cachesPath)/\(tileNamePrefix)_\(column)_\(row)"
+    let filePath = "\(cachesPath)/\(fileName)_\(column)_\(row)"
     return UIImage(contentsOfFile: filePath)
   }
 

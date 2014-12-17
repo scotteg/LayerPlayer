@@ -165,9 +165,9 @@
 				D24791401A36BC80007AC991 /* ClassListViewController.swift */,
 				D24791411A36BC80007AC991 /* CALayerViewController.swift */,
 				D24791421A36BC80007AC991 /* CALayerControlsViewController.swift */,
-				D24791431A36BC80007AC991 /* AVPlayerLayerViewController.swift */,
 				D24791441A36BC80007AC991 /* CAScrollLayerViewController.swift */,
 				D24791451A36BC80007AC991 /* CATextLayerViewController.swift */,
+				D24791431A36BC80007AC991 /* AVPlayerLayerViewController.swift */,
 				D24791461A36BC80007AC991 /* CAGradientLayerViewController.swift */,
 				D24791471A36BC80007AC991 /* CAReplicatorLayerViewController.swift */,
 				D24791481A36BC80007AC991 /* CAShapeLayerViewController.swift */,
@@ -506,6 +506,7 @@
 				D24791301A36BB95007AC991 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D24791311A36BB95007AC991 /* Build configuration list for PBXNativeTarget "LayerPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +515,7 @@
 				D24791331A36BB95007AC991 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
