@@ -12,21 +12,19 @@ class CAEmitterLayerViewController: UIViewController {
   
   @IBOutlet weak var viewForEmitterLayer: UIView!
   
-  var emitterLayer: CAEmitterLayer!
-  var emitterCell: CAEmitterCell!
+  var emitterLayer = CAEmitterLayer()
+  var emitterCell = CAEmitterCell()
   
   // MARK: - Quick reference
   
   func setUpEmitterLayer() {
-    emitterLayer = CAEmitterLayer()
     emitterLayer.frame = viewForEmitterLayer.bounds
     emitterLayer.seed = UInt32(NSDate().timeIntervalSince1970)
     emitterLayer.renderMode = kCAEmitterLayerAdditive
-    emitterLayer.emitterPosition = CGPoint(x: CGRectGetWidth(self.view.frame) / 4.0 * 3.0, y: CGRectGetHeight(emitterLayer.frame) / 2.0)
+    emitterLayer.emitterPosition = CGPoint(x: CGRectGetMidX(viewForEmitterLayer.bounds) * 1.5, y: CGRectGetMidY(viewForEmitterLayer.bounds))
   }
   
   func setUpEmitterCell() {
-    emitterCell = CAEmitterCell()
     emitterCell.enabled = true
     emitterCell.contents = UIImage(named: "smallStar")?.CGImage
     emitterCell.contentsRect = CGRect(origin: CGPointZero, size: CGSize(width: 1, height: 1))
@@ -61,18 +59,18 @@ class CAEmitterLayerViewController: UIViewController {
   
   // MARK: - View life cycle
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    setUpEmitterCell()
+    resetEmitterCells()
+    setUpEmitterLayer()
+    viewForEmitterLayer.layer.addSublayer(emitterLayer)
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if let identifier = segue.identifier {
       switch identifier {
       case "DisplayEmitterControls":
-        setUpEmitterLayer()
-        setUpEmitterCell()
-        resetEmitterCells()
-        viewForEmitterLayer.layer.addSublayer(emitterLayer)
         let controller = segue.destinationViewController as CAEmitterLayerControlsViewController
         controller.emitterLayerViewController = self
       default:
@@ -85,13 +83,13 @@ class CAEmitterLayerViewController: UIViewController {
   
   override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
     if let location = touches.anyObject()?.locationInView(viewForEmitterLayer) {
-      emitterLayer.position = location
+      emitterLayer.emitterPosition = location
     }
   }
   
   override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
     if let location = touches.anyObject()?.locationInView(viewForEmitterLayer) {
-      emitterLayer.position = location
+      emitterLayer.emitterPosition = location
     }
   }
   
