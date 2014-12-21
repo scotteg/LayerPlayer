@@ -3,15 +3,17 @@
 //  LayerPlayer
 //
 //  Created by Scott Gardner on 7/27/14.
-//  Copyright (c) 2014 Razeware LLC. All rights reserved.
+//  Copyright (c) 2014 Scott Gardner. All rights reserved.
 //
 
 import UIKit
 
+let sideLength: CGFloat = 640.0
+let fileName = "windingRoad"
+
 class TilingViewForImage: UIView {
   
   let sideLength = CGFloat(640.0)
-  let fileName = "windingRoad"
   let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as String
   
   override class func layerClass() -> AnyClass {

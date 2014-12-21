@@ -14,9 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    let sideLength: CGFloat = 640.0
     let size = CGSize(width: sideLength, height: sideLength)
-    UIImage.saveTileOfSize(size, name: "windingRoad")
+    UIImage.saveTileOfSize(size, name: fileName)
     return true
   }
   

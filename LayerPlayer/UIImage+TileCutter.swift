@@ -3,7 +3,10 @@
 //  LayerPlayer
 //
 //  Created by Scott Gardner on 7/27/14.
-//  Copyright (c) 2014 Razeware LLC. All rights reserved.
+//  Copyright (c) 2014 Scott Gardner. All rights reserved.
+//
+//  Adapted from Nick Lockwood's Terminal app in his book, iOS Core Animation: Advanced Techniques
+//  http://www.informit.com/store/ios-core-animation-advanced-techniques-9780133440751
 //
 
 import UIKit
