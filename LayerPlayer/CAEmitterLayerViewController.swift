@@ -20,7 +20,6 @@ class CAEmitterLayerViewController: UIViewController {
   func setUpEmitterLayer() {
     emitterLayer.frame = viewForEmitterLayer.bounds
     emitterLayer.seed = UInt32(NSDate().timeIntervalSince1970)
-    emitterLayer.renderMode = kCAEmitterLayerAdditive
     emitterLayer.emitterPosition = CGPoint(x: CGRectGetMidX(viewForEmitterLayer.bounds) * 1.5, y: CGRectGetMidY(viewForEmitterLayer.bounds))
   }
   
@@ -71,6 +70,7 @@ class CAEmitterLayerViewController: UIViewController {
     if let identifier = segue.identifier {
       switch identifier {
       case "DisplayEmitterControls":
+        emitterLayer.renderMode = kCAEmitterLayerAdditive
         let controller = segue.destinationViewController as CAEmitterLayerControlsViewController
         controller.emitterLayerViewController = self
       default:
