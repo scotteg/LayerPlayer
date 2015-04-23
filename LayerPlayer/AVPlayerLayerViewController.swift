@@ -112,7 +112,7 @@ class AVPlayerLayerViewController: UIViewController {
   }
   
   func playerDidReachEndNotificationHandler(notification: NSNotification) {
-    let playerItem = notification.object as AVPlayerItem
+    let playerItem = notification.object as! AVPlayerItem
     playerItem.seekToTime(kCMTimeZero)
     
     if !shouldLoop {
