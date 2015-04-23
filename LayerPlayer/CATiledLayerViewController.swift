@@ -25,7 +25,7 @@ class CATiledLayerViewController: UIViewController, UIScrollViewDelegate {
   @IBOutlet weak var zoomScaleSliderValueLabel: UILabel!
   
   var tiledLayer: TiledLayer {
-    return viewForTiledLayer.layer as TiledLayer
+    return viewForTiledLayer.layer as! TiledLayer
   }
   
   // MARK: - View life cycle
@@ -60,7 +60,7 @@ class CATiledLayerViewController: UIViewController, UIScrollViewDelegate {
   }
   
   @IBAction func levelsOfDetailSliderChanged(sender: UISlider) {
-    tiledLayer.levelsOfDetail = UInt(sender.value)
+    tiledLayer.levelsOfDetail = Int(sender.value)
     updateLevelsOfDetailSliderValueLabel()
   }
   
@@ -81,7 +81,7 @@ class CATiledLayerViewController: UIViewController, UIScrollViewDelegate {
   }
   
   @IBAction func detailBiasSliderChanged(sender: UISlider) {
-    tiledLayer.levelsOfDetailBias = UInt(sender.value)
+    tiledLayer.levelsOfDetailBias = Int(sender.value)
     updateDetailBiasSliderValueLabel()
   }
   
@@ -118,11 +118,11 @@ class CATiledLayerViewController: UIViewController, UIScrollViewDelegate {
   
   // MARK: UIScrollViewDelegate
   
-  func viewForZoomingInScrollView(scrollView: UIScrollView!) -> UIView! {
+  func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
     return viewForTiledLayer
   }
   
-  func scrollViewDidZoom(scrollView: UIScrollView!) {
+  func scrollViewDidZoom(scrollView: UIScrollView) {
     zoomScaleSlider.setValue(Float(scrollView.zoomScale), animated: true)
     updateZoomScaleSliderValueLabel()
   }

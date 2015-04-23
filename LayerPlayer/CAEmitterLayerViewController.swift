@@ -71,7 +71,7 @@ class CAEmitterLayerViewController: UIViewController {
       switch identifier {
       case "DisplayEmitterControls":
         emitterLayer.renderMode = kCAEmitterLayerAdditive
-        let controller = segue.destinationViewController as CAEmitterLayerControlsViewController
+        let controller = segue.destinationViewController as! CAEmitterLayerControlsViewController
         controller.emitterLayerViewController = self
       default:
         break
@@ -81,14 +81,14 @@ class CAEmitterLayerViewController: UIViewController {
   
   // MARK: - Triggered actions
   
-  override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-    if let location = touches.anyObject()?.locationInView(viewForEmitterLayer) {
+  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    if let location = (touches.first as? UITouch)?.locationInView(viewForEmitterLayer){
       emitterLayer.emitterPosition = location
     }
   }
   
-  override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-    if let location = touches.anyObject()?.locationInView(viewForEmitterLayer) {
+  override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    if let location = (touches.first as? UITouch)?.locationInView(viewForEmitterLayer){
       emitterLayer.emitterPosition = location
     }
   }

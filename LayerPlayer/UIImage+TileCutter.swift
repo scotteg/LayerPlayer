@@ -14,7 +14,7 @@ import UIKit
 extension UIImage {
   
   class func saveTileOfSize(size: CGSize, name: String) -> () {
-    let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as String
+    let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as! String
     let filePath = "\(cachesPath)/\(name)_0_0.png"
     let fileManager = NSFileManager.defaultManager()
     let fileExists = fileManager.fileExistsAtPath(filePath)
