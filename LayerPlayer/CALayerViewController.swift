@@ -44,8 +44,8 @@ class CALayerViewController: UIViewController {
     if let identifier = segue.identifier {
       switch identifier {
       case "DisplayLayerControls":
-        let controller = segue.destinationViewController as CALayerControlsViewController
-        controller.layerViewController = self
+        let controller = segue.destinationViewController as? CALayerControlsViewController
+        controller?.layerViewController = self
       default:
         break
       }
