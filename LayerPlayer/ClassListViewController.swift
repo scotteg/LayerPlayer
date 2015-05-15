@@ -39,7 +39,7 @@ class ClassListViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("ClassCell") as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("ClassCell") as! UITableViewCell
     let row = indexPath.row
     cell.textLabel!.text = classes[row].0
     cell.detailTextLabel!.text = classes[row].1

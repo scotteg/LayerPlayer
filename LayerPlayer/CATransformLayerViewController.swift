@@ -87,8 +87,9 @@ class CATransformLayerViewController: UIViewController {
   
   // MARK: - Triggered actions
   
-  override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-    if let location = touches.anyObject()?.locationInView(viewForTransformLayer) {
+  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    let touchSet = touches as! Set<UITouch>
+    if let location = touchSet.first?.locationInView(viewForTransformLayer) {
       if trackBall != nil {
         trackBall?.setStartPointFromLocation(location)
       } else {
@@ -104,16 +105,18 @@ class CATransformLayerViewController: UIViewController {
     }
   }
   
-  override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-    if let location = touches.anyObject()?.locationInView(viewForTransformLayer) {
+  override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    let touchSet = touches as! Set<UITouch>
+    if let location = touchSet.first?.locationInView(viewForTransformLayer) {
       if let transform = trackBall?.rotationTransformForLocation(location) {
         viewForTransformLayer.layer.sublayerTransform = transform
       }
     }
   }
   
-  override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-    if let location = touches.anyObject()?.locationInView(viewForTransformLayer) {
+  override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    let touchSet = touches as! Set<UITouch>
+    if let location = touchSet.first?.locationInView(viewForTransformLayer) {
       trackBall?.finalizeTrackBallForLocation(location)
     }
   }
