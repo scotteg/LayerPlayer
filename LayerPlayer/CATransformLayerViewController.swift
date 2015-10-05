@@ -87,16 +87,17 @@ class CATransformLayerViewController: UIViewController {
   
   // MARK: - Triggered actions
   
-  override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-    if let location = touches.anyObject()?.locationInView(viewForTransformLayer) {
+override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    let touch =  touches.first as UITouch?
+    if let location = touch?.locationInView(viewForTransformLayer) {
       if trackBall != nil {
         trackBall?.setStartPointFromLocation(location)
       } else {
         trackBall = TrackBall(location: location, inRect: viewForTransformLayer.bounds)
       }
       
-      for layer in transformLayer.sublayers {
-        if let hitLayer = layer.hitTest(location) {
+      for layer in transformLayer.sublayers! {
+        if let _ = layer.hitTest(location) {
           showBoxTappedLabel()
           break
         }
@@ -104,16 +105,18 @@ class CATransformLayerViewController: UIViewController {
     }
   }
   
-  override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-    if let location = touches.anyObject()?.locationInView(viewForTransformLayer) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    let touch =  touches.first as UITouch?
+    if let location = touch?.locationInView(viewForTransformLayer) {
       if let transform = trackBall?.rotationTransformForLocation(location) {
         viewForTransformLayer.layer.sublayerTransform = transform
       }
     }
   }
   
-  override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-    if let location = touches.anyObject()?.locationInView(viewForTransformLayer) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    let touch =  touches.first as UITouch?
+    if let location = touch?.locationInView(viewForTransformLayer) {
       trackBall?.finalizeTrackBallForLocation(location)
     }
   }

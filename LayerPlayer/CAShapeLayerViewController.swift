@@ -47,7 +47,7 @@ class CAShapeLayerViewController: UIViewController {
   }
   
   func setUpClosedPath() {
-    closedPath.CGPath = CGPathCreateMutableCopy(openPath.CGPath)
+    closedPath.CGPath = CGPathCreateMutableCopy(openPath.CGPath)!
     closedPath.closePath()
   }
   

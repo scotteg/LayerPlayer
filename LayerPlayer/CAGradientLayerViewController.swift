@@ -46,7 +46,7 @@ class CAGradientLayerViewController: UIViewController {
   func setUpLocationSliders() {
     let sliders = locationSliders
     
-    for (index, slider) in enumerate(sliders) {
+    for (index, slider) in sliders.enumerate() {
       slider.value = locations[index]
     }
   }
@@ -78,7 +78,7 @@ class CAGradientLayerViewController: UIViewController {
     var gradientLayerColors = [AnyObject]()
     var locations = [NSNumber]()
     
-    for (index, colorSwitch) in enumerate(colorSwitches) {
+    for (index, colorSwitch) in colorSwitches.enumerate() {
       let slider = locationSliders[index]
       
       if colorSwitch.on {
@@ -102,7 +102,7 @@ class CAGradientLayerViewController: UIViewController {
   @IBAction func locationSliderChanged(sender: UISlider) {
     var gradientLayerLocations = [NSNumber]()
     
-    for (index, slider) in enumerate(locationSliders) {
+    for (index, slider) in locationSliders.enumerate() {
       let colorSwitch = colorSwitches[index]
       
       if colorSwitch.on {
@@ -122,7 +122,7 @@ class CAGradientLayerViewController: UIViewController {
   }
   
   func updateLocationSliderValueLabels() {
-    for (index, label) in enumerate(locationSliderValueLabels) {
+    for (index, label) in locationSliderValueLabels.enumerate() {
       let colorSwitch = colorSwitches[index]
       
       if colorSwitch.on {

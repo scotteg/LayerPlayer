@@ -9,9 +9,20 @@
       "filename" : "align_left.png"
     },
     {
+      "resizing" : {
+        "mode" : "3-part-vertical",
+        "center" : {
+          "mode" : "fill",
+          "height" : 1
+        },
+        "capInsets" : {
+          "top" : 11,
+          "bottom" : 12
+        }
+      },
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "align_left@2x.png"
+      "filename" : "align_left@2x.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",

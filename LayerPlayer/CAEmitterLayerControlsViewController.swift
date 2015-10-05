@@ -196,11 +196,11 @@ class CAEmitterLayerControlsViewController: UITableViewController, UIPickerViewD
   // MARK: - UIPickerViewDelegate
   
   func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-    return emitterLayerRenderModes[row] as String
+    return emitterLayerRenderModes[row] as! String
   }
   
   func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    emitterLayerViewController.emitterLayer.renderMode = emitterLayerRenderModes[row] as String
+    emitterLayerViewController.emitterLayer.renderMode = emitterLayerRenderModes[row] as! String
     updateRenderModePickerValueLabel()
   }
   
