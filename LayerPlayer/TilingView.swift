@@ -18,8 +18,8 @@ class TilingView: UIView {
   
   required init(coder aDecoder: NSCoder) {
     srand48(Int(NSDate().timeIntervalSince1970))
-    super.init(coder: aDecoder)
-    let layer = self.layer as TiledLayer
+    super.init(coder: aDecoder)!
+    let layer = self.layer as! TiledLayer
     layer.contentsScale = UIScreen.mainScreen().scale
     layer.tileSize = CGSize(width: sideLength, height: sideLength)
   }
@@ -52,7 +52,7 @@ class TilingView: UIView {
     CGContextSetRGBFillColor(context, red, green, blue, 1.0)
     CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
     CGContextSetLineWidth(context, 4.0 / scale)
-    CGContextDrawPath(context, kCGPathEOFillStroke)
+    CGContextDrawPath(context, CGPathDrawingMode.EOFillStroke)
   }
   
 }

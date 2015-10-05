@@ -9,9 +9,23 @@
       "filename" : "align_right.png"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "fill",
+          "width" : 12,
+          "height" : 1
+        },
+        "capInsets" : {
+          "bottom" : 9,
+          "top" : 14,
+          "right" : 2,
+          "left" : 0
+        }
+      },
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "align_right@2x.png"
+      "filename" : "align_right@2x.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",

@@ -25,7 +25,7 @@ class CATiledLayerViewController: UIViewController, UIScrollViewDelegate {
   @IBOutlet weak var zoomScaleSliderValueLabel: UILabel!
   
   var tiledLayer: TiledLayer {
-    return viewForTiledLayer.layer as TiledLayer
+    return viewForTiledLayer.layer as! TiledLayer
   }
   
   // MARK: - View life cycle
@@ -60,7 +60,7 @@ class CATiledLayerViewController: UIViewController, UIScrollViewDelegate {
   }
   
   @IBAction func levelsOfDetailSliderChanged(sender: UISlider) {
-    tiledLayer.levelsOfDetail = UInt(sender.value)
+    tiledLayer.levelsOfDetail = Int(sender.value)
     updateLevelsOfDetailSliderValueLabel()
   }
   
@@ -73,15 +73,15 @@ class CATiledLayerViewController: UIViewController, UIScrollViewDelegate {
     zoomLabel.hidden = false
     let label = zoomLabel
     
-    UIView.animateWithDuration(1.0, delay: 0.0, options: nil, animations: {
-      label.alpha = 0
-      }, completion: { _ in
-        label.hidden = true
-    })
+    UIView.animateWithDuration(1.0, animations: { () -> Void in
+        label.alpha = 0
+        }) { (finished: Bool) -> Void in
+            label.hidden = true
+    }
   }
   
   @IBAction func detailBiasSliderChanged(sender: UISlider) {
-    tiledLayer.levelsOfDetailBias = UInt(sender.value)
+    tiledLayer.levelsOfDetailBias = Int(sender.value)
     updateDetailBiasSliderValueLabel()
   }
   

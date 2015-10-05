@@ -14,7 +14,7 @@ import UIKit
 extension UIImage {
   
   class func saveTileOfSize(size: CGSize, name: String) -> () {
-    let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as String
+    let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as! String
     let filePath = "\(cachesPath)/\(name)_0_0.png"
     let fileManager = NSFileManager.defaultManager()
     let fileExists = fileManager.fileExistsAtPath(filePath)
@@ -45,7 +45,7 @@ extension UIImage {
               let yOffset = CGFloat(y) * tileSize.height
               let point = CGPoint(x: xOffset, y: yOffset)
               let tileImageRef = CGImageCreateWithImageInRect(imageRef, CGRect(origin: point, size: tileSize))
-              let imageData = UIImagePNGRepresentation(UIImage(CGImage: tileImageRef))
+              let imageData = UIImagePNGRepresentation(UIImage(CGImage: tileImageRef!))
               let path = "\(cachesPath)/\(name)_\(x)_\(y).png"
               imageData?.writeToFile(path, atomically: false)
             }

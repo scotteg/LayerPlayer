@@ -14,15 +14,15 @@ let fileName = "windingRoad"
 class TilingViewForImage: UIView {
   
   let sideLength = CGFloat(640.0)
-  let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as String
+  let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as! String
   
   override class func layerClass() -> AnyClass {
     return TiledLayer.self
   }
   
   required init(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    let layer = self.layer as TiledLayer
+    super.init(coder: aDecoder)!
+    let layer = self.layer as! TiledLayer
     layer.contentsScale = UIScreen.mainScreen().scale
     layer.tileSize = CGSize(width: sideLength, height: sideLength)
   }

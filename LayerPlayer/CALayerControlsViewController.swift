@@ -165,7 +165,7 @@ class CALayerControlsViewController: UITableViewController, UIPickerViewDataSour
   // MARK: - Helpers
   
   func updateContentsGravityPickerValueLabel() {
-    contentsGravityPickerValueLabel.text = layerViewController.layer.contentsGravity as NSString
+    contentsGravityPickerValueLabel.text = layerViewController.layer.contentsGravity as NSString as String
   }
   
   func updateSliderValueLabels() {
@@ -237,11 +237,11 @@ class CALayerControlsViewController: UITableViewController, UIPickerViewDataSour
   // MARK: - UIPickerViewDelegate
   
   func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-    return contentsGravityValues[row] as String
+    return contentsGravityValues[row] as! String
   }
   
   func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    layerViewController.layer.contentsGravity = contentsGravityValues[row] as String
+    layerViewController.layer.contentsGravity = contentsGravityValues[row] as! String
     updateContentsGravityPickerValueLabel()
   }
 

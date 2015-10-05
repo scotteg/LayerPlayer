@@ -23,7 +23,7 @@ class AVPlayerLayerViewController: UIViewController {
     
   let playerLayer = AVPlayerLayer()
   var player: AVPlayer {
-    return playerLayer.player
+    return playerLayer.player!
   }
   var rateBeforePause: Float?
   var shouldLoop = true
@@ -34,7 +34,7 @@ class AVPlayerLayerViewController: UIViewController {
   func setUpPlayerLayer() {
     playerLayer.frame = viewForPlayerLayer.bounds
     let url = NSBundle.mainBundle().URLForResource("colorfulStreak", withExtension: "m4v")
-    let player = AVPlayer(URL: url)
+    let player = AVPlayer(URL: url!)
     player.actionAtItemEnd = .None
     playerLayer.player = player
   }
@@ -112,7 +112,7 @@ class AVPlayerLayerViewController: UIViewController {
   }
   
   func playerDidReachEndNotificationHandler(notification: NSNotification) {
-    let playerItem = notification.object as AVPlayerItem
+    let playerItem = notification.object as! AVPlayerItem
     playerItem.seekToTime(kCMTimeZero)
     
     if !shouldLoop {
