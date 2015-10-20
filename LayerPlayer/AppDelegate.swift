@@ -8,14 +8,39 @@
 
 import UIKit
 
+let swiftOrangeColor = UIColor(red: 248/255, green: 96/255.0, blue: 47/255.0, alpha: 1.0)
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    UILabel.appearance().font = UIFont(name: "Avenir-Light", size: 17.0)
+    UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewCell.self]).font = UIFont(name: "Avenir-light", size: 14.0)
+    UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+    UINavigationBar.appearance().barTintColor = swiftOrangeColor
+    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Avenir-light", size: 20.0)!]
+    UITableView.appearance().separatorColor = swiftOrangeColor
+    UITableViewCell.appearance().separatorInset = UIEdgeInsetsZero
+    UIControl.appearance().tintColor = swiftOrangeColor
+    
+    let splitViewController = window!.rootViewController as! UISplitViewController
+    
+    // Ensures the initial CALayer detail includes the display mode button, because the row has not been selected yet
+    let navigationItem = (splitViewController.viewControllers.last as! UINavigationController).topViewController!.navigationItem
+    navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
+    navigationItem.leftItemsSupplementBackButton = true
+    
+    if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+      splitViewController.preferredDisplayMode = .AllVisible
+    } else {
+      splitViewController.preferredPrimaryColumnWidthFraction = 0.3
+    }
+    
     let size = CGSize(width: sideLength, height: sideLength)
     UIImage.saveTileOfSize(size, name: fileName)
+    
     return true
   }
   
@@ -42,4 +67,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
 }
-

@@ -62,9 +62,9 @@ class TrackBall {
     
     let startPoint = trackBallStartPoint
     let currentPoint = trackBallCurrentPoint
-    var x = startPoint.y * currentPoint.z - startPoint.z * currentPoint.y
-    var y = -startPoint.x * currentPoint.z + trackBallStartPoint.z * currentPoint.x
-    var z = startPoint.x * currentPoint.y - startPoint.y * currentPoint.x
+    let x = startPoint.y * currentPoint.z - startPoint.z * currentPoint.y
+    let y = -startPoint.x * currentPoint.z + trackBallStartPoint.z * currentPoint.x
+    let z = startPoint.x * currentPoint.y - startPoint.y * currentPoint.x
     var rotationVector = (x: x, y: y, z: z)
     
     let startLength = sqrt(Double(startPoint.x** + startPoint.y** + startPoint.z**))

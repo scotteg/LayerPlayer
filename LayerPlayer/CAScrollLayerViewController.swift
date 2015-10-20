@@ -15,7 +15,7 @@ class CAScrollLayerViewController: UIViewController {
   @IBOutlet weak var verticalScrollingSwitch: UISwitch!
   
   var scrollingViewLayer: CAScrollLayer {
-    return scrollingView.layer as CAScrollLayer
+    return scrollingView.layer as! CAScrollLayer
   }
   
   // MARK: - View life cycle

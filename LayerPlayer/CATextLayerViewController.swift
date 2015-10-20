@@ -10,6 +10,8 @@ import UIKit
 
 class CATextLayerViewController: UIViewController {
   
+  // FIXME: CATextLayer not updating on rotation and getting unsatisfiable constraints in compact width, compact height (e.g., iPhone 5 in landscape)
+
   @IBOutlet weak var viewForTextLayer: UIView!
   @IBOutlet weak var fontSizeSliderValueLabel: UILabel!
   @IBOutlet weak var fontSizeSlider: UISlider!

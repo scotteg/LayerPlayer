@@ -10,6 +10,8 @@ import UIKit
 
 class CALayerViewController: UIViewController {
   
+  // FIXME: Unsatisfiable constraints in compact width, compact height (e.g., iPhone 5 in landscape)
+  
   @IBOutlet weak var viewForLayer: UIView!
   
   let layer = CALayer()
@@ -25,7 +27,7 @@ class CALayerViewController: UIViewController {
     layer.cornerRadius = 100.0
     layer.borderWidth = 12.0
     layer.borderColor = UIColor.whiteColor().CGColor
-    layer.backgroundColor = UIColor(red: 11/255.0, green: 86/255.0, blue: 14/255.0, alpha: 1.0).CGColor
+    layer.backgroundColor = swiftOrangeColor.CGColor
     layer.shadowOpacity = 0.75
     layer.shadowOffset = CGSize(width: 0, height: 3)
     layer.shadowRadius = 3.0
@@ -44,8 +46,7 @@ class CALayerViewController: UIViewController {
     if let identifier = segue.identifier {
       switch identifier {
       case "DisplayLayerControls":
-        let controller = segue.destinationViewController as CALayerControlsViewController
-        controller.layerViewController = self
+        (segue.destinationViewController as? CALayerControlsViewController)?.layerViewController = self
       default:
         break
       }

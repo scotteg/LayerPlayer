@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D247912B1A36BB95007AC991 /* LayerPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D247912A1A36BB95007AC991 /* LayerPlayerTests.swift */; };
+		D236BF631BD807D600CD3C4C /* Array+SortUIViewsInPlaceByTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236BF621BD807D600CD3C4C /* Array+SortUIViewsInPlaceByTag.swift */; };
 		D247913C1A36BC6C007AC991 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24791371A36BC6C007AC991 /* AppDelegate.swift */; };
 		D247913D1A36BC6C007AC991 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D24791381A36BC6C007AC991 /* Images.xcassets */; };
 		D247913E1A36BC6C007AC991 /* colorfulStreak.m4v in Resources */ = {isa = PBXBuildFile; fileRef = D24791391A36BC6C007AC991 /* colorfulStreak.m4v */; };
@@ -34,24 +34,14 @@
 		D24791691A36BC94007AC991 /* TiledLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24791631A36BC94007AC991 /* TiledLayer.swift */; };
 		D247916A1A36BC94007AC991 /* TilingViewForImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24791641A36BC94007AC991 /* TilingViewForImage.swift */; };
 		D247916C1A36BC9C007AC991 /* TrackBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = D247916B1A36BC9C007AC991 /* TrackBall.swift */; };
+		D2FECA321BDA23E100D9B63A /* UITableViewCell+ZeroLayoutMargins.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FECA311BDA23E100D9B63A /* UITableViewCell+ZeroLayoutMargins.swift */; };
+		D2FECA361BDA4C2C00D9B63A /* LayerPlayer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2FECA351BDA4C2C00D9B63A /* LayerPlayer.ttf */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D24791251A36BB95007AC991 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D24791071A36BB95007AC991 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D247910E1A36BB95007AC991;
-			remoteInfo = LayerPlayer;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		D236BF621BD807D600CD3C4C /* Array+SortUIViewsInPlaceByTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+SortUIViewsInPlaceByTag.swift"; sourceTree = "<group>"; };
 		D247910F1A36BB95007AC991 /* LayerPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayerPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24791131A36BB95007AC991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D24791241A36BB95007AC991 /* LayerPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LayerPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D24791291A36BB95007AC991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D247912A1A36BB95007AC991 /* LayerPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerPlayerTests.swift; sourceTree = "<group>"; };
 		D24791371A36BC6C007AC991 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D24791381A36BC6C007AC991 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D24791391A36BC6C007AC991 /* colorfulStreak.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = colorfulStreak.m4v; sourceTree = "<group>"; };
@@ -80,17 +70,12 @@
 		D24791631A36BC94007AC991 /* TiledLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiledLayer.swift; sourceTree = "<group>"; };
 		D24791641A36BC94007AC991 /* TilingViewForImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TilingViewForImage.swift; sourceTree = "<group>"; };
 		D247916B1A36BC9C007AC991 /* TrackBall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackBall.swift; sourceTree = "<group>"; };
+		D2FECA311BDA23E100D9B63A /* UITableViewCell+ZeroLayoutMargins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ZeroLayoutMargins.swift"; sourceTree = "<group>"; };
+		D2FECA351BDA4C2C00D9B63A /* LayerPlayer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LayerPlayer.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D247910C1A36BB95007AC991 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D24791211A36BB95007AC991 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -104,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				D24791111A36BB95007AC991 /* LayerPlayer */,
-				D24791271A36BB95007AC991 /* LayerPlayerTests */,
 				D24791101A36BB95007AC991 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				D247910F1A36BB95007AC991 /* LayerPlayer.app */,
-				D24791241A36BB95007AC991 /* LayerPlayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,29 +115,14 @@
 		D24791121A36BB95007AC991 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D24791371A36BC6C007AC991 /* AppDelegate.swift */,
-				D24791381A36BC6C007AC991 /* Images.xcassets */,
 				D24791391A36BC6C007AC991 /* colorfulStreak.m4v */,
-				D247913A1A36BC6C007AC991 /* UIImage+TileCutter.swift */,
-				D247913B1A36BC6C007AC991 /* LayerPlayer-Bridging-Header.h */,
+				D24791381A36BC6C007AC991 /* Images.xcassets */,
 				D24791131A36BB95007AC991 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D24791271A36BB95007AC991 /* LayerPlayerTests */ = {
-			isa = PBXGroup;
-			children = (
-				D247912A1A36BB95007AC991 /* LayerPlayerTests.swift */,
-				D24791281A36BB95007AC991 /* Supporting Files */,
-			);
-			path = LayerPlayerTests;
-			sourceTree = "<group>";
-		};
-		D24791281A36BB95007AC991 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D24791291A36BB95007AC991 /* Info.plist */,
+				D2FECA351BDA4C2C00D9B63A /* LayerPlayer.ttf */,
+				D247913B1A36BC6C007AC991 /* LayerPlayer-Bridging-Header.h */,
+				D236BF621BD807D600CD3C4C /* Array+SortUIViewsInPlaceByTag.swift */,
+				D247913A1A36BC6C007AC991 /* UIImage+TileCutter.swift */,
+				D2FECA311BDA23E100D9B63A /* UITableViewCell+ZeroLayoutMargins.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -162,6 +130,7 @@
 		D24791341A36BC39007AC991 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D24791371A36BC6C007AC991 /* AppDelegate.swift */,
 				D24791401A36BC80007AC991 /* ClassListViewController.swift */,
 				D24791411A36BC80007AC991 /* CALayerViewController.swift */,
 				D24791421A36BC80007AC991 /* CALayerControlsViewController.swift */,
@@ -223,40 +192,20 @@
 			productReference = D247910F1A36BB95007AC991 /* LayerPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D24791231A36BB95007AC991 /* LayerPlayerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D24791311A36BB95007AC991 /* Build configuration list for PBXNativeTarget "LayerPlayerTests" */;
-			buildPhases = (
-				D24791201A36BB95007AC991 /* Sources */,
-				D24791211A36BB95007AC991 /* Frameworks */,
-				D24791221A36BB95007AC991 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D24791261A36BB95007AC991 /* PBXTargetDependency */,
-			);
-			name = LayerPlayerTests;
-			productName = LayerPlayerTests;
-			productReference = D24791241A36BB95007AC991 /* LayerPlayerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D24791071A36BB95007AC991 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Scott Gardner";
 				TargetAttributes = {
 					D247910E1A36BB95007AC991 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = CX893E63R7;
-					};
-					D24791231A36BB95007AC991 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = D247910E1A36BB95007AC991;
 					};
 				};
 			};
@@ -274,7 +223,6 @@
 			projectRoot = "";
 			targets = (
 				D247910E1A36BB95007AC991 /* LayerPlayer */,
-				D24791231A36BB95007AC991 /* LayerPlayerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -285,16 +233,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D24791661A36BC94007AC991 /* LaunchScreen.xib in Resources */,
+				D2FECA361BDA4C2C00D9B63A /* LayerPlayer.ttf in Resources */,
 				D24791651A36BC94007AC991 /* Main.storyboard in Resources */,
 				D247913D1A36BC6C007AC991 /* Images.xcassets in Resources */,
 				D247913E1A36BC6C007AC991 /* colorfulStreak.m4v in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D24791221A36BB95007AC991 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +260,7 @@
 				D24791681A36BC94007AC991 /* TilingView.swift in Sources */,
 				D24791511A36BC80007AC991 /* CALayerViewController.swift in Sources */,
 				D24791531A36BC80007AC991 /* AVPlayerLayerViewController.swift in Sources */,
+				D2FECA321BDA23E100D9B63A /* UITableViewCell+ZeroLayoutMargins.swift in Sources */,
 				D24791541A36BC80007AC991 /* CAScrollLayerViewController.swift in Sources */,
 				D247913C1A36BC6C007AC991 /* AppDelegate.swift in Sources */,
 				D24791671A36BC94007AC991 /* ScrollingView.swift in Sources */,
@@ -326,27 +269,12 @@
 				D247916A1A36BC94007AC991 /* TilingViewForImage.swift in Sources */,
 				D24791591A36BC80007AC991 /* CATiledLayerViewController.swift in Sources */,
 				D247915B1A36BC80007AC991 /* ObjC_CAEAGLLayerViewController.m in Sources */,
+				D236BF631BD807D600CD3C4C /* Array+SortUIViewsInPlaceByTag.swift in Sources */,
 				D24791571A36BC80007AC991 /* CAReplicatorLayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D24791201A36BB95007AC991 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D247912B1A36BB95007AC991 /* LayerPlayerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D24791261A36BB95007AC991 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D247910E1A36BB95007AC991 /* LayerPlayer */;
-			targetProxy = D24791251A36BB95007AC991 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D247912C1A36BB95007AC991 /* Debug */ = {
@@ -369,6 +297,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -383,7 +312,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -420,7 +348,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,9 +360,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Optimac, Inc. (CX893E63R7)";
 				INFOPLIST_FILE = LayerPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.optimacinc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -446,44 +374,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Optimac, Inc. (CX893E63R7)";
 				INFOPLIST_FILE = LayerPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.optimacinc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		D24791321A36BB95007AC991 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LayerPlayerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LayerPlayer.app/LayerPlayer";
-			};
-			name = Debug;
-		};
-		D24791331A36BB95007AC991 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LayerPlayerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LayerPlayer.app/LayerPlayer";
 			};
 			name = Release;
 		};
@@ -504,15 +399,6 @@
 			buildConfigurations = (
 				D247912F1A36BB95007AC991 /* Debug */,
 				D24791301A36BB95007AC991 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D24791311A36BB95007AC991 /* Build configuration list for PBXNativeTarget "LayerPlayerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D24791321A36BB95007AC991 /* Debug */,
-				D24791331A36BB95007AC991 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

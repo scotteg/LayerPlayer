@@ -28,6 +28,11 @@ class ClassListViewController: UITableViewController {
     }
   }
   
+//  override func viewDidLoad() {
+//    super.viewDidLoad()
+//    tableView.separatorInset = UIEdgeInsetsZero
+//  }
+  
   // MARK: - UITableViewDataSource
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -39,7 +44,10 @@ class ClassListViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("ClassCell") as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("ClassCell")!
+//    cell.layoutMargins = UIEdgeInsetsZero
+//    cell.separatorInset = UIEdgeInsetsZero
+    
     let row = indexPath.row
     cell.textLabel!.text = classes[row].0
     cell.detailTextLabel!.text = classes[row].1
@@ -51,7 +59,10 @@ class ClassListViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let identifier = classes[indexPath.row].0
-    performSegueWithIdentifier(identifier, sender: nil)
+    let navController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(identifier) as! UINavigationController
+    navController.topViewController!.navigationItem.leftBarButtonItem = splitViewController!.displayModeButtonItem()
+    navController.topViewController!.navigationItem.leftItemsSupplementBackButton = true
+    splitViewController?.showDetailViewController(navController, sender: nil)
   }
   
 }

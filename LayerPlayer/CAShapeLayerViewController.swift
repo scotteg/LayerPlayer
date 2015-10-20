@@ -10,6 +10,8 @@ import UIKit
 
 class CAShapeLayerViewController: UIViewController {
   
+  // FIXME: Unsatisfiable constraints in compact width, compact height (e.g., iPhone 5 in landscape)
+  
   @IBOutlet weak var viewForShapeLayer: UIView!
   @IBOutlet weak var closePathSwitch: UISwitch!
   @IBOutlet weak var hueSlider: UISlider!
@@ -31,7 +33,7 @@ class CAShapeLayerViewController: UIViewController {
   }
   
   let shapeLayer = CAShapeLayer()
-  var color = UIColor(hue: 129/359.0, saturation: 1.0, brightness: 0.4, alpha: 1.0)
+  var color = swiftOrangeColor
   let openPath = UIBezierPath()
   let closedPath = UIBezierPath()
   
@@ -47,7 +49,7 @@ class CAShapeLayerViewController: UIViewController {
   }
   
   func setUpClosedPath() {
-    closedPath.CGPath = CGPathCreateMutableCopy(openPath.CGPath)
+    closedPath.CGPath = CGPathCreateMutableCopy(openPath.CGPath)!
     closedPath.closePath()
   }
   
@@ -100,7 +102,7 @@ class CAShapeLayerViewController: UIViewController {
   
   @IBAction func hueSliderChanged(sender: UISlider) {
     let hue = CGFloat(sender.value / 359.0)
-    let color = UIColor(hue: hue, saturation: hue, brightness: 0.4, alpha: 1.0)
+    let color = UIColor(hue: hue, saturation: 0.81, brightness: 0.97, alpha: 1.0)
     shapeLayer.fillColor = fillSwitch.on ? color.CGColor : nil
     shapeLayer.strokeColor = color.CGColor
     self.color = color

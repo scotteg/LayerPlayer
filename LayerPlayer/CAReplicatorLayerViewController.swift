@@ -10,6 +10,8 @@ import UIKit
 
 class CAReplicatorLayerViewController: UIViewController {
   
+  // FIXME: Unsatisfiable constraints in compact width, any height (e.g., iPhone in landscape)
+  
   @IBOutlet weak var viewForReplicatorLayer: UIView!
   @IBOutlet weak var layerSizeSlider: UISlider!
   @IBOutlet weak var layerSizeSliderValueLabel: UILabel!
@@ -70,6 +72,12 @@ class CAReplicatorLayerViewController: UIViewController {
     updateLayerSizeSliderValueLabel()
     updateInstanceCountSliderValueLabel()
     updateInstanceDelaySliderValueLabel()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    setUpReplicatorLayer()
+    setUpInstanceLayer()
   }
   
   // MARK: - IBActions

@@ -20,9 +20,9 @@ class TilingViewForImage: UIView {
     return TiledLayer.self
   }
   
-  required init(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    let layer = self.layer as TiledLayer
+    guard let layer = self.layer as? TiledLayer else { return nil }
     layer.contentsScale = UIScreen.mainScreen().scale
     layer.tileSize = CGSize(width: sideLength, height: sideLength)
   }

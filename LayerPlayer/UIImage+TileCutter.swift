@@ -44,10 +44,11 @@ extension UIImage {
               let xOffset = CGFloat(x) * tileSize.width
               let yOffset = CGFloat(y) * tileSize.height
               let point = CGPoint(x: xOffset, y: yOffset)
-              let tileImageRef = CGImageCreateWithImageInRect(imageRef, CGRect(origin: point, size: tileSize))
-              let imageData = UIImagePNGRepresentation(UIImage(CGImage: tileImageRef))
-              let path = "\(cachesPath)/\(name)_\(x)_\(y).png"
-              imageData?.writeToFile(path, atomically: false)
+              
+              if let tileImageRef = CGImageCreateWithImageInRect(imageRef, CGRect(origin: point, size: tileSize)), imageData = UIImagePNGRepresentation(UIImage(CGImage: tileImageRef)) {
+                let path = "\(cachesPath)/\(name)_\(x)_\(y).png"
+                imageData.writeToFile(path, atomically: false)
+              }
             }
           }
         })
