@@ -13,7 +13,6 @@ let fileName = "windingRoad"
 
 class TilingViewForImage: UIView {
   
-  let sideLength = CGFloat(640.0)
   let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as String
   
   override class func layerClass() -> AnyClass {
