@@ -30,6 +30,12 @@ class ClassListViewController: UITableViewController {
   
   var navController: UINavigationController!
   var detailViewController: UIViewController!
+  var collapseDetailViewController = true
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    splitViewController?.delegate = self
+  }
   
   // MARK: - UITableViewDataSource
   
@@ -59,6 +65,16 @@ class ClassListViewController: UITableViewController {
     detailViewController?.navigationItem.leftBarButtonItem = splitViewController!.displayModeButtonItem()
     detailViewController?.navigationItem.leftItemsSupplementBackButton = true
     splitViewController?.showDetailViewController(navController, sender: nil)
+    collapseDetailViewController = false
   }
   
 }
+
+extension ClassListViewController: UISplitViewControllerDelegate {
+  
+  func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
+    return collapseDetailViewController
+  }
+  
+}
+
