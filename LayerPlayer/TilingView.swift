@@ -12,47 +12,47 @@ class TilingView: UIView {
   
   let sideLength = CGFloat(100.0)
   
-  override class func layerClass() -> AnyClass {
+  override class var layerClass : AnyClass {
     return TiledLayer.self
   }
   
   required init?(coder aDecoder: NSCoder) {
-    srand48(Int(NSDate().timeIntervalSince1970))
+    srand48(Int(Date().timeIntervalSince1970))
     super.init(coder: aDecoder)
     guard let layer = self.layer as? TiledLayer else { return nil }
-    layer.contentsScale = UIScreen.mainScreen().scale
+    layer.contentsScale = UIScreen.main.scale
     layer.tileSize = CGSize(width: sideLength, height: sideLength)
   }
   
-  override func drawRect(rect: CGRect) {
+  override func draw(_ rect: CGRect) {
     let context = UIGraphicsGetCurrentContext()
-    let scale = UIScreen.mainScreen().scale
+    let scale = UIScreen.main.scale
     
     var red = CGFloat(drand48())
     var green = CGFloat(drand48())
     var blue = CGFloat(drand48())
-    CGContextSetRGBFillColor(context, red, green, blue, 1.0)
-    CGContextFillRect(context, rect)
+    context?.setFillColor(red: red, green: green, blue: blue, alpha: 1.0)
+    context?.fill(rect)
     
     let x = bounds.origin.x
     let y = bounds.origin.y
-    let offset = CGRectGetWidth(bounds) / sideLength * (scale == 3 ? 2 : scale)
-    CGContextMoveToPoint(context, x + 9.0 * offset, y + 43.0 * offset)
-    CGContextAddLineToPoint(context, x + 18.06 * offset, y + 22.6 * offset)
-    CGContextAddLineToPoint(context, x + 25.0 * offset, y + 7.5 * offset)
-    CGContextAddLineToPoint(context, x + 41.0 * offset, y + 43.0 * offset)
-    CGContextAddLineToPoint(context, x + 9.0 * offset, y + 21.66 * offset)
-    CGContextAddLineToPoint(context, x + 41.0 * offset, y + 14.54 * offset)
-    CGContextAddLineToPoint(context, x + 9.0 * offset, y + 43.0 * offset)
-    CGContextClosePath(context)
+    let offset = bounds.width / sideLength * (scale == 3 ? 2 : scale)
+    context?.move(to: CGPoint(x: x + 9.0 * offset, y: y + 43.0 * offset))
+    context?.addLine(to: CGPoint(x: x + 18.06 * offset, y: y + 22.6 * offset))
+    context?.addLine(to: CGPoint(x: x + 25.0 * offset, y: y + 7.5 * offset))
+    context?.addLine(to: CGPoint(x: x + 41.0 * offset, y: y + 43.0 * offset))
+    context?.addLine(to: CGPoint(x: x + 9.0 * offset, y: y + 21.66 * offset))
+    context?.addLine(to: CGPoint(x: x + 41.0 * offset, y: y + 14.54 * offset))
+    context?.addLine(to: CGPoint(x: x + 9.0 * offset, y: y + 43.0 * offset))
+    context?.closePath()
     
     red = CGFloat(drand48())
     green = CGFloat(drand48())
     blue = CGFloat(drand48())
-    CGContextSetRGBFillColor(context, red, green, blue, 1.0)
-    CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
-    CGContextSetLineWidth(context, 4.0 / scale)
-    CGContextDrawPath(context, .EOFillStroke)
+    context?.setFillColor(red: red, green: green, blue: blue, alpha: 1.0)
+    context?.setStrokeColor(UIColor.white.cgColor)
+    context?.setLineWidth(4.0 / scale)
+    context?.drawPath(using: .eoFillStroke)
   }
   
 }

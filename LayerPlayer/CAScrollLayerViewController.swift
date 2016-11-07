@@ -27,23 +27,23 @@ class CAScrollLayerViewController: UIViewController {
   
   // MARK: - IBActions
   
-  @IBAction func panRecognized(sender: UIPanGestureRecognizer) {
+  @IBAction func panRecognized(_ sender: UIPanGestureRecognizer) {
     var newPoint = scrollingView.bounds.origin
-    newPoint.x -= sender.translationInView(scrollingView).x
-    newPoint.y -= sender.translationInView(scrollingView).y
-    sender.setTranslation(CGPointZero, inView: scrollingView)
-    scrollingViewLayer.scrollToPoint(newPoint)
+    newPoint.x -= sender.translation(in: scrollingView).x
+    newPoint.y -= sender.translation(in: scrollingView).y
+    sender.setTranslation(CGPoint.zero, in: scrollingView)
+    scrollingViewLayer.scroll(to: newPoint)
     
-    if sender.state == .Ended {
-      UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseInOut, animations: {
+    if sender.state == .ended {
+      UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions(), animations: {
         [unowned self] in
-        self.scrollingViewLayer.scrollToPoint(CGPointZero)
+        self.scrollingViewLayer.scroll(to: CGPoint.zero)
         }, completion: nil)
     }
   }
   
-  @IBAction func scrollingSwitchChanged(sender: UISwitch) {
-    switch (horizontalScrollingSwitch.on, verticalScrollingSwitch.on) {
+  @IBAction func scrollingSwitchChanged(_ sender: UISwitch) {
+    switch (horizontalScrollingSwitch.isOn, verticalScrollingSwitch.isOn) {
     case (true, true):
       scrollingViewLayer.scrollMode = kCAScrollBoth
     case (true, false):

@@ -8,7 +8,7 @@
 
 import UIKit
 
-postfix operator ** { }
+postfix operator **
 postfix func ** (value: CGFloat) -> CGFloat {
   return value * value
 }
@@ -23,28 +23,28 @@ class TrackBall {
   var trackBallStartPoint = (x: CGFloat(0.0), y: CGFloat(0.0), z: CGFloat(0.0))
   
   init(location: CGPoint, inRect bounds: CGRect) {
-    if CGRectGetWidth(bounds) > CGRectGetHeight(bounds) {
-      trackBallRadius = CGRectGetHeight(bounds) * 0.5
+    if bounds.width > bounds.height {
+      trackBallRadius = bounds.height * 0.5
     } else {
-      trackBallRadius = CGRectGetWidth(bounds) * 0.5
+      trackBallRadius = bounds.width * 0.5
     }
     
-    trackBallCenter = CGPoint(x: CGRectGetMidX(bounds), y: CGRectGetMidY(bounds))
+    trackBallCenter = CGPoint(x: bounds.midX, y: bounds.midY)
     setStartPointFromLocation(location)
   }
   
-  func setStartPointFromLocation(location: CGPoint) {
+  func setStartPointFromLocation(_ location: CGPoint) {
     trackBallStartPoint.x = location.x - trackBallCenter.x
     trackBallStartPoint.y = location.y - trackBallCenter.y
     let distance = trackBallStartPoint.x** + trackBallStartPoint.y**
     trackBallStartPoint.z = distance > trackBallRadius** ? CGFloat(0.0) : sqrt(trackBallRadius** - distance)
   }
   
-  func finalizeTrackBallForLocation(location: CGPoint) {
+  func finalizeTrackBallForLocation(_ location: CGPoint) {
     baseTransform = rotationTransformForLocation(location)
   }
   
-  func rotationTransformForLocation(location: CGPoint) -> CATransform3D {
+  func rotationTransformForLocation(_ location: CGPoint) -> CATransform3D {
     var trackBallCurrentPoint = (x: location.x - trackBallCenter.x, y: location.y - trackBallCenter.y, z: CGFloat(0.0))
     let withinTolerance = fabs(Double(trackBallCurrentPoint.x - trackBallStartPoint.x)) < tolerance && fabs(Double(trackBallCurrentPoint.y - trackBallStartPoint.y)) < tolerance
     

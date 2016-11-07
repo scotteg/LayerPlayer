@@ -20,14 +20,14 @@ class CATextLayerViewController: UIViewController {
   @IBOutlet weak var truncationModeSegmentedControl: UISegmentedControl!
   
   enum Font: Int {
-    case Helvetica, NoteworthyLight
+    case helvetica, noteworthyLight
   }
   
   enum AlignmentMode: Int {
-    case Left, Center, Justified, Right
+    case left, center, justified, right
   }
   enum TruncationMode: Int {
-    case Start, Middle, End
+    case start, middle, end
   }
   
   var noteworthyLightFont: AnyObject?
@@ -35,7 +35,7 @@ class CATextLayerViewController: UIViewController {
   let baseFontSize: CGFloat = 24.0
   let textLayer = CATextLayer()
   var fontSize: CGFloat = 24.0
-  var previouslySelectedTruncationMode = TruncationMode.End
+  var previouslySelectedTruncationMode = TruncationMode.end
   
   // MARK: - Quick reference
   
@@ -49,17 +49,17 @@ class CATextLayerViewController: UIViewController {
     
     textLayer.string = string
     textLayer.font = helveticaFont
-    textLayer.foregroundColor = UIColor.darkGrayColor().CGColor
-    textLayer.wrapped = true
+    textLayer.foregroundColor = UIColor.darkGray.cgColor
+    textLayer.isWrapped = true
     textLayer.alignmentMode = kCAAlignmentLeft
     textLayer.truncationMode = kCATruncationEnd
-    textLayer.contentsScale = UIScreen.mainScreen().scale
+    textLayer.contentsScale = UIScreen.main.scale
   }
   
   func createFonts() {
-    var fontName: CFStringRef = "Noteworthy-Light"
+    var fontName: CFString = "Noteworthy-Light" as CFString
     noteworthyLightFont = CTFontCreateWithName(fontName, baseFontSize, nil)
-    fontName = "Helvetica"
+    fontName = "Helvetica" as CFString
     helveticaFont = CTFontCreateWithName(fontName, baseFontSize, nil)
   }
   
@@ -80,71 +80,71 @@ class CATextLayerViewController: UIViewController {
   
   // MARK: - IBActions
   
-  @IBAction func fontSegmentedControlChanged(sender: UISegmentedControl) {
+  @IBAction func fontSegmentedControlChanged(_ sender: UISegmentedControl) {
     switch sender.selectedSegmentIndex {
-    case Font.Helvetica.rawValue:
+    case Font.helvetica.rawValue:
       textLayer.font = helveticaFont
-    case Font.NoteworthyLight.rawValue:
+    case Font.noteworthyLight.rawValue:
       textLayer.font = noteworthyLightFont
     default:
       break
     }
   }
   
-  @IBAction func fontSizeSliderChanged(sender: UISlider) {
+  @IBAction func fontSizeSliderChanged(_ sender: UISlider) {
     fontSizeSliderValueLabel.text = "\(Int(sender.value * 100.0))%"
     fontSize = baseFontSize * CGFloat(sender.value)
   }
   
-  @IBAction func wrapTextSwitchChanged(sender: UISwitch) {
-    alignmentModeSegmentedControl.selectedSegmentIndex = AlignmentMode.Left.rawValue
+  @IBAction func wrapTextSwitchChanged(_ sender: UISwitch) {
+    alignmentModeSegmentedControl.selectedSegmentIndex = AlignmentMode.left.rawValue
     textLayer.alignmentMode = kCAAlignmentLeft
     
-    if sender.on {
+    if sender.isOn {
       if let truncationMode = TruncationMode(rawValue: truncationModeSegmentedControl.selectedSegmentIndex) {
         previouslySelectedTruncationMode = truncationMode
       }
       
       truncationModeSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
-      textLayer.wrapped = true
+      textLayer.isWrapped = true
     } else {
-      textLayer.wrapped = false
+      textLayer.isWrapped = false
       truncationModeSegmentedControl.selectedSegmentIndex = previouslySelectedTruncationMode.rawValue
     }
   }
   
-  @IBAction func alignmentModeSegmentedControlChanged(sender: UISegmentedControl) {
-    wrapTextSwitch.on = true
-    textLayer.wrapped = true
+  @IBAction func alignmentModeSegmentedControlChanged(_ sender: UISegmentedControl) {
+    wrapTextSwitch.isOn = true
+    textLayer.isWrapped = true
     truncationModeSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
     textLayer.truncationMode = kCATruncationNone
     
     switch sender.selectedSegmentIndex {
-    case AlignmentMode.Left.rawValue:
+    case AlignmentMode.left.rawValue:
       textLayer.alignmentMode = kCAAlignmentLeft
-    case AlignmentMode.Center.rawValue:
+    case AlignmentMode.center.rawValue:
       textLayer.alignmentMode = kCAAlignmentCenter
-    case AlignmentMode.Justified.rawValue:
+    case AlignmentMode.justified.rawValue:
       textLayer.alignmentMode = kCAAlignmentJustified
-    case AlignmentMode.Right.rawValue:
+    case AlignmentMode.right.rawValue:
       textLayer.alignmentMode = kCAAlignmentRight
     default:
       textLayer.alignmentMode = kCAAlignmentLeft
     }
   }
   
-  @IBAction func truncationModeSegmentedControlChanged(sender: UISegmentedControl) {
-    wrapTextSwitch.on = false
-    textLayer.wrapped = false
+  @IBAction func truncationModeSegmentedControlChanged(_ sender: UISegmentedControl) {
+    wrapTextSwitch.isOn = false
+    textLayer.isWrapped = false
     alignmentModeSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
     textLayer.alignmentMode = kCAAlignmentLeft
     
     switch sender.selectedSegmentIndex {
-    case TruncationMode.Start.rawValue:
+    case TruncationMode.start.rawValue:
       textLayer.truncationMode = kCATruncationStart
-    case TruncationMode.Middle.rawValue:
+    case TruncationMode.middle.rawValue:
       textLayer.truncationMode = kCATruncationMiddle
-    case TruncationMode.End.rawValue:
+    case TruncationMode.end.rawValue:
       textLayer.truncationMode = kCATruncationEnd
     default:
       textLayer.truncationMode = kCATruncationNone

@@ -13,24 +13,24 @@ let fileName = "windingRoad"
 
 class TilingViewForImage: UIView {
   
-  let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as String
+  let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
   
-  override class func layerClass() -> AnyClass {
+  override class var layerClass : AnyClass {
     return TiledLayer.self
   }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     guard let layer = self.layer as? TiledLayer else { return nil }
-    layer.contentsScale = UIScreen.mainScreen().scale
+    layer.contentsScale = UIScreen.main.scale
     layer.tileSize = CGSize(width: sideLength, height: sideLength)
   }
   
-  override func drawRect(rect: CGRect) {
-    let firstColumn = Int(CGRectGetMinX(rect) / sideLength)
-    let lastColumn = Int(CGRectGetMaxX(rect) / sideLength)
-    let firstRow = Int(CGRectGetMinY(rect) / sideLength)
-    let lastRow = Int(CGRectGetMaxY(rect) / sideLength)
+  override func draw(_ rect: CGRect) {
+    let firstColumn = Int(rect.minX / sideLength)
+    let lastColumn = Int(rect.maxX / sideLength)
+    let firstRow = Int(rect.minY / sideLength)
+    let lastRow = Int(rect.maxY / sideLength)
     
     for row in firstRow...lastRow {
       for column in firstColumn...lastColumn {
@@ -40,14 +40,14 @@ class TilingViewForImage: UIView {
           let point = CGPoint(x: x, y: y)
           let size = CGSize(width: sideLength, height: sideLength)
           var tileRect = CGRect(origin: point, size: size)
-          tileRect = CGRectIntersection(bounds, tileRect)
-          tile.drawInRect(tileRect)
+          tileRect = bounds.intersection(tileRect)
+          tile.draw(in: tileRect)
         }
       }
     }
   }
   
-  func imageForTileAtColumn(column: Int, row: Int) -> UIImage? {
+  func imageForTileAtColumn(_ column: Int, row: Int) -> UIImage? {
     let filePath = "\(cachesPath)/\(fileName)_\(column)_\(row)"
     return UIImage(contentsOfFile: filePath)
   }

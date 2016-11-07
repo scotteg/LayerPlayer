@@ -16,12 +16,12 @@ class CATiledImageLayerViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    doneButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "LayerPlayer", size: 23.0)!], forState: .Normal)
+    doneButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "LayerPlayer", size: 23.0)!], for: UIControlState())
     scrollView.contentSize = CGSize(width: 5120, height: 3200)
   }
   
-  @IBAction func doneButtonTapped(sender: UIBarButtonItem) {
-    dismissViewControllerAnimated(true, completion: nil)
+  @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+    dismiss(animated: true, completion: nil)
   }
   
 }

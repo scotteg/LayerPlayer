@@ -19,15 +19,15 @@ class CAEmitterLayerViewController: UIViewController {
   
   func setUpEmitterLayer() {
     emitterLayer.frame = viewForEmitterLayer.bounds
-    emitterLayer.seed = UInt32(NSDate().timeIntervalSince1970)
-    emitterLayer.emitterPosition = CGPoint(x: CGRectGetMidX(viewForEmitterLayer.bounds) * 1.5, y: CGRectGetMidY(viewForEmitterLayer.bounds))
+    emitterLayer.seed = UInt32(Date().timeIntervalSince1970)
+    emitterLayer.emitterPosition = CGPoint(x: viewForEmitterLayer.bounds.midX * 1.5, y: viewForEmitterLayer.bounds.midY)
   }
   
   func setUpEmitterCell() {
-    emitterCell.enabled = true
-    emitterCell.contents = UIImage(named: "smallStar")?.CGImage
-    emitterCell.contentsRect = CGRect(origin: CGPointZero, size: CGSize(width: 1, height: 1))
-    emitterCell.color = UIColor(hue: 0.0, saturation: 0.0, brightness: 0.0, alpha: 1.0).CGColor
+    emitterCell.isEnabled = true
+    emitterCell.contents = UIImage(named: "smallStar")?.cgImage
+    emitterCell.contentsRect = CGRect(origin: CGPoint.zero, size: CGSize(width: 1, height: 1))
+    emitterCell.color = UIColor(hue: 0.0, saturation: 0.0, brightness: 0.0, alpha: 1.0).cgColor
     emitterCell.redRange = 1.0
     emitterCell.greenRange = 1.0
     emitterCell.blueRange = 1.0
@@ -58,7 +58,7 @@ class CAEmitterLayerViewController: UIViewController {
   
   // MARK: - View life cycle
   
-  override func viewDidAppear(animated: Bool) {
+  override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     setUpEmitterCell()
     resetEmitterCells()
@@ -66,12 +66,12 @@ class CAEmitterLayerViewController: UIViewController {
     viewForEmitterLayer.layer.addSublayer(emitterLayer)
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let identifier = segue.identifier {
       switch identifier {
       case "DisplayEmitterControls":
         emitterLayer.renderMode = kCAEmitterLayerAdditive
-        (segue.destinationViewController as? CAEmitterLayerControlsViewController)?.emitterLayerViewController = self
+        (segue.destination as? CAEmitterLayerControlsViewController)?.emitterLayerViewController = self
       default:
         break
       }
@@ -80,14 +80,14 @@ class CAEmitterLayerViewController: UIViewController {
   
   // MARK: - Triggered actions
   
-  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    if let location = touches.first?.locationInView(viewForEmitterLayer) {
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    if let location = touches.first?.location(in: viewForEmitterLayer) {
       emitterLayer.emitterPosition = location
     }
   }
   
-  override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    if let location = touches.first?.locationInView(viewForEmitterLayer) {
+  override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    if let location = touches.first?.location(in: viewForEmitterLayer) {
       emitterLayer.emitterPosition = location
     }
   }

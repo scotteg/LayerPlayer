@@ -15,7 +15,7 @@ class CALayerViewController: UIViewController {
   @IBOutlet weak var viewForLayer: UIView!
   
   let layer = CALayer()
-  let star = UIImage(named: "star")?.CGImage
+  let star = UIImage(named: "star")?.cgImage
   
   // MARK: - Quick reference
   
@@ -23,11 +23,11 @@ class CALayerViewController: UIViewController {
     layer.frame = viewForLayer.bounds
     layer.contents = star
     layer.contentsGravity = kCAGravityCenter
-    layer.geometryFlipped = false
+    layer.isGeometryFlipped = false
     layer.cornerRadius = 100.0
     layer.borderWidth = 12.0
-    layer.borderColor = UIColor.whiteColor().CGColor
-    layer.backgroundColor = swiftOrangeColor.CGColor
+    layer.borderColor = UIColor.white.cgColor
+    layer.backgroundColor = swiftOrangeColor.cgColor
     layer.shadowOpacity = 0.75
     layer.shadowOffset = CGSize(width: 0, height: 3)
     layer.shadowRadius = 3.0
@@ -42,11 +42,11 @@ class CALayerViewController: UIViewController {
     viewForLayer.layer.addSublayer(layer)
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let identifier = segue.identifier {
       switch identifier {
       case "DisplayLayerControls":
-        (segue.destinationViewController as? CALayerControlsViewController)?.layerViewController = self
+        (segue.destination as? CALayerControlsViewController)?.layerViewController = self
       default:
         break
       }

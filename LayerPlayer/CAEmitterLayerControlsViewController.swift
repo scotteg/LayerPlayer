@@ -17,10 +17,10 @@ class CAEmitterLayerControlsViewController: UITableViewController, UIPickerViewD
   @IBOutlet var sliders: [UISlider]!
   
   enum Section: Int {
-    case EmitterLayer, EmitterCell
+    case emitterLayer, emitterCell
   }
   enum Slider: Int {
-    case Color, RedRange, GreenRange, BlueRange, AlphaRange, RedSpeed, GreenSpeed, BlueSpeed, AlphaSpeed, Scale, ScaleRange, Spin, SpinRange, EmissionLatitude, EmissionLongitude, EmissionRange, Lifetime, LifetimeRange, BirthRate, Velocity, VelocityRange, XAcceleration, YAcceleration
+    case color, redRange, greenRange, blueRange, alphaRange, redSpeed, greenSpeed, blueSpeed, alphaSpeed, scale, scaleRange, spin, spinRange, emissionLatitude, emissionLongitude, emissionRange, lifetime, lifetimeRange, birthRate, velocity, velocityRange, xAcceleration, yAcceleration
   }
   
   weak var emitterLayerViewController: CAEmitterLayerViewController!
@@ -43,48 +43,48 @@ class CAEmitterLayerControlsViewController: UITableViewController, UIPickerViewD
   
   // MARK: - IBActions
   
-  @IBAction func enabledSwitchChanged(sender: UISwitch) {
-    emitterLayerViewController.emitterCell.enabled = sender.on
+  @IBAction func enabledSwitchChanged(_ sender: UISwitch) {
+    emitterLayerViewController.emitterCell.isEnabled = sender.isOn
     emitterLayerViewController.resetEmitterCells()
   }
   
-  @IBAction func sliderChanged(sender: UISlider) {
+  @IBAction func sliderChanged(_ sender: UISlider) {
     let slidersArray = sliders as NSArray
-    let slider = Slider(rawValue: slidersArray.indexOfObject(sender))!
+    let slider = Slider(rawValue: slidersArray.index(of: sender))!
     var keyPath = "emitterCell."
     
     switch slider {
-    case .Color: keyPath += "color"
-    case .RedRange: keyPath += "redRange"
-    case .GreenRange: keyPath += "greenRange"
-    case .BlueRange: keyPath += "blueRange"
-    case .AlphaRange: keyPath += "alphaRange"
-    case .RedSpeed: keyPath += "redSpeed"
-    case .GreenSpeed: keyPath += "greenSpeed"
-    case .BlueSpeed: keyPath += "blueSpeed"
-    case .AlphaSpeed: keyPath += "alphaSpeed"
-    case .Scale: keyPath  += "scale"
-    case .ScaleRange: keyPath += "scaleRange"
-    case .Spin: keyPath += "spin"
-    case .SpinRange: keyPath += "spinRange"
-    case .EmissionLatitude: keyPath += "emissionLatitude"
-    case .EmissionLongitude: keyPath += "emissionLongitude"
-    case .EmissionRange: keyPath += "emissionRange"
-    case .Lifetime: keyPath += "lifetime"
-    case .LifetimeRange: keyPath += "lifetimeRange"
-    case .BirthRate: keyPath += "birthRate"
-    case .Velocity: keyPath += "velocity"
-    case .VelocityRange: keyPath += "velocityRange"
-    case .XAcceleration: keyPath += "xAcceleration"
-    case .YAcceleration: keyPath += "yAcceleration"
+    case .color: keyPath += "color"
+    case .redRange: keyPath += "redRange"
+    case .greenRange: keyPath += "greenRange"
+    case .blueRange: keyPath += "blueRange"
+    case .alphaRange: keyPath += "alphaRange"
+    case .redSpeed: keyPath += "redSpeed"
+    case .greenSpeed: keyPath += "greenSpeed"
+    case .blueSpeed: keyPath += "blueSpeed"
+    case .alphaSpeed: keyPath += "alphaSpeed"
+    case .scale: keyPath  += "scale"
+    case .scaleRange: keyPath += "scaleRange"
+    case .spin: keyPath += "spin"
+    case .spinRange: keyPath += "spinRange"
+    case .emissionLatitude: keyPath += "emissionLatitude"
+    case .emissionLongitude: keyPath += "emissionLongitude"
+    case .emissionRange: keyPath += "emissionRange"
+    case .lifetime: keyPath += "lifetime"
+    case .lifetimeRange: keyPath += "lifetimeRange"
+    case .birthRate: keyPath += "birthRate"
+    case .velocity: keyPath += "velocity"
+    case .velocityRange: keyPath += "velocityRange"
+    case .xAcceleration: keyPath += "xAcceleration"
+    case .yAcceleration: keyPath += "yAcceleration"
     }
     
     if keyPath == "emitterCell.color" {
       let color = UIColor(hue: 0.0, saturation: 0.0, brightness: CGFloat(sender.value), alpha: 1.0)
-      emitterLayerViewController.emitterCell.color = color.CGColor
+      emitterLayerViewController.emitterCell.color = color.cgColor
       emitterLayerViewController.resetEmitterCells()
     } else {
-      emitterLayerViewController.setValue(NSNumber(float: sender.value), forKeyPath: keyPath)
+      emitterLayerViewController.setValue(NSNumber(value: sender.value as Float), forKeyPath: keyPath)
       emitterLayerViewController.resetEmitterCells()
     }
     
@@ -96,12 +96,12 @@ class CAEmitterLayerControlsViewController: UITableViewController, UIPickerViewD
   func showEmitterLayerRenderModePicker() {
     renderModePickerVisible = true
     relayoutTableViewCells()
-    let index = emitterLayerRenderModes.indexOfObject(emitterLayer.renderMode)
+    let index = emitterLayerRenderModes.index(of: emitterLayer.renderMode)
     renderModePicker.selectRow(index, inComponent: 0, animated: false)
-    renderModePicker.hidden = false
+    renderModePicker.isHidden = false
     renderModePicker.alpha = 0.0
     
-    UIView.animateWithDuration(0.25, animations: {
+    UIView.animate(withDuration: 0.25, animations: {
       [unowned self] in
       self.renderModePicker.alpha = 1.0
     })
@@ -109,17 +109,17 @@ class CAEmitterLayerControlsViewController: UITableViewController, UIPickerViewD
   
   func hideEmitterLayerRenderModePicker() {
     if renderModePickerVisible {
-      UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+      UIApplication.shared.beginIgnoringInteractionEvents()
       renderModePickerVisible = false
       relayoutTableViewCells()
       
-      UIView.animateWithDuration(0.25, animations: {
+      UIView.animate(withDuration: 0.25, animations: {
         [unowned self] in
         self.renderModePicker.alpha = 0.0
       }, completion: {
         [unowned self] _ in
-        self.renderModePicker.hidden = true
-        UIApplication.sharedApplication().endIgnoringInteractionEvents()
+        self.renderModePicker.isHidden = true
+        UIApplication.shared.endIgnoringInteractionEvents()
       })
     }
   }
@@ -131,26 +131,26 @@ class CAEmitterLayerControlsViewController: UITableViewController, UIPickerViewD
   }
   
   func updateSliderValueLabels() {
-    for slider in Slider.Color.rawValue...Slider.YAcceleration.rawValue {
+    for slider in Slider.color.rawValue...Slider.yAcceleration.rawValue {
       updateSliderValueLabel(Slider(rawValue: slider)!)
     }
   }
   
-  func updateSliderValueLabel(sliderEnum: Slider) {
+  func updateSliderValueLabel(_ sliderEnum: Slider) {
     let index = sliderEnum.rawValue
     let label = sliderValueLabels[index]
     let slider = sliders[index]
     
     switch sliderEnum {
-    case .RedRange, .GreenRange, .BlueRange, .AlphaRange, .RedSpeed, .GreenSpeed, .BlueSpeed, .AlphaSpeed, .Scale, .ScaleRange, .Lifetime, .LifetimeRange:
+    case .redRange, .greenRange, .blueRange, .alphaRange, .redSpeed, .greenSpeed, .blueSpeed, .alphaSpeed, .scale, .scaleRange, .lifetime, .lifetimeRange:
       label.text = String(format: "%.1f", slider.value)
-    case .Color:
+    case .color:
       label.text = String(format: "%.0f", slider.value * 100.0)
-    case .Spin, .SpinRange, .EmissionLatitude, .EmissionLongitude, .EmissionRange:
-      let formatter = NSNumberFormatter()
+    case .spin, .spinRange, .emissionLatitude, .emissionLongitude, .emissionRange:
+      let formatter = NumberFormatter()
       formatter.minimumFractionDigits = 0
       label.text = "\(Int(radiansToDegrees(Double(slider.value))))"
-    case .BirthRate, .Velocity, .VelocityRange, .XAcceleration, .YAcceleration:
+    case .birthRate, .velocity, .velocityRange, .xAcceleration, .yAcceleration:
       label.text = String(format: "%.0f", slider.value)
     }
   }
@@ -162,21 +162,21 @@ class CAEmitterLayerControlsViewController: UITableViewController, UIPickerViewD
   
   // MARK: - UITableViewDelegate
   
-  override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     let section = Section(rawValue: indexPath.section)!
     
-    if section == .EmitterLayer && indexPath.row == 1 {
+    if section == .emitterLayer && indexPath.row == 1 {
       return renderModePickerVisible ? 162.0 : 0.0
     } else {
       return 44.0
     }
   }
   
-  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let section = Section(rawValue: indexPath.section)!
     
     switch section {
-    case .EmitterLayer where !renderModePickerVisible:
+    case .emitterLayer where !renderModePickerVisible:
       showEmitterLayerRenderModePicker()
     default:
       hideEmitterLayerRenderModePicker()
@@ -185,21 +185,21 @@ class CAEmitterLayerControlsViewController: UITableViewController, UIPickerViewD
   
   // MARK: - UIPickerViewDataSource
   
-  func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
   }
   
-  func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     return emitterLayerRenderModes.count
   }
   
   // MARK: - UIPickerViewDelegate
   
-  func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     return emitterLayerRenderModes[row] as? String
   }
   
-  func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     emitterLayerViewController.emitterLayer.renderMode = emitterLayerRenderModes[row] as! String
     updateRenderModePickerValueLabel()
   }

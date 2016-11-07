@@ -13,24 +13,24 @@ import UIKit
 
 extension UIImage {
   
-  class func saveTileOfSize(size: CGSize, name: String) -> () {
-    let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as String
+  class func saveTileOfSize(_ size: CGSize, name: String) -> () {
+    let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
     let filePath = "\(cachesPath)/\(name)_0_0.png"
-    let fileManager = NSFileManager.defaultManager()
-    let fileExists = fileManager.fileExistsAtPath(filePath)
+    let fileManager = FileManager.default
+    let fileExists = fileManager.fileExists(atPath: filePath)
         
     if fileExists == false {
       var tileSize = size
-      let scale = Float(UIScreen.mainScreen().scale)
+      let scale = Float(UIScreen.main.scale)
       
       if let image = UIImage(named: "\(name).jpg") {
-        let imageRef = image.CGImage
+        let imageRef = image.cgImage
         let totalColumns = Int(ceilf(Float(image.size.width / tileSize.width)) * scale)
         let totalRows = Int(ceilf(Float(image.size.height / tileSize.height)) * scale)
-        let partialColumnWidth = Int(image.size.width % tileSize.width)
-        let partialRowHeight = Int(image.size.height % tileSize.height)
+        let partialColumnWidth = Int(image.size.width.truncatingRemainder(dividingBy: tileSize.width))
+        let partialRowHeight = Int(image.size.height.truncatingRemainder(dividingBy: tileSize.height))
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+        DispatchQueue.global(qos: .default).async {
           for y in 0..<totalRows {
             for x in 0..<totalColumns {
               if partialRowHeight > 0 && y + 1 == totalRows {
@@ -45,13 +45,13 @@ extension UIImage {
               let yOffset = CGFloat(y) * tileSize.height
               let point = CGPoint(x: xOffset, y: yOffset)
               
-              if let tileImageRef = CGImageCreateWithImageInRect(imageRef, CGRect(origin: point, size: tileSize)), imageData = UIImagePNGRepresentation(UIImage(CGImage: tileImageRef)) {
+              if let tileImageRef = imageRef?.cropping(to: CGRect(origin: point, size: tileSize)), let imageData = UIImagePNGRepresentation(UIImage(cgImage: tileImageRef)) {
                 let path = "\(cachesPath)/\(name)_\(x)_\(y).png"
-                imageData.writeToFile(path, atomically: false)
+                try? imageData.write(to: URL(fileURLWithPath: path), options: [])
               }
             }
           }
-        })
+        }
       }
     }
   }

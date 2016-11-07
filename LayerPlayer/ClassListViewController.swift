@@ -39,16 +39,16 @@ class ClassListViewController: UITableViewController {
   
   // MARK: - UITableViewDataSource
   
-  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+  override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
   
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return classes.count
   }
   
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("ClassCell")!
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell")!
     let row = indexPath.row
     cell.textLabel!.text = classes[row].0
     cell.detailTextLabel!.text = classes[row].1
@@ -58,11 +58,11 @@ class ClassListViewController: UITableViewController {
   
   // MARK: - UITableViewDelegate
   
-  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let identifier = classes[indexPath.row].0
-    navController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(identifier) as! UINavigationController
+    navController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier) as! UINavigationController
     detailViewController = navController.topViewController
-    detailViewController?.navigationItem.leftBarButtonItem = splitViewController!.displayModeButtonItem()
+    detailViewController?.navigationItem.leftBarButtonItem = splitViewController!.displayModeButtonItem
     detailViewController?.navigationItem.leftItemsSupplementBackButton = true
     splitViewController?.showDetailViewController(navController, sender: nil)
     collapseDetailViewController = false
@@ -72,7 +72,7 @@ class ClassListViewController: UITableViewController {
 
 extension ClassListViewController: UISplitViewControllerDelegate {
   
-  func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
+  func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
     return collapseDetailViewController
   }
   

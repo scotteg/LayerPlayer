@@ -11,7 +11,7 @@ import QuartzCore
 
 class ScrollingView: UIView {
   
-  override class func layerClass() -> AnyClass {
+  override class var layerClass : AnyClass {
     return CAScrollLayer.self
   }
   

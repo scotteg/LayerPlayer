@@ -17,7 +17,7 @@ extension Array where Element: UIView {
    * [Source on GitHub](http://bit.ly/SortUIViewsInPlaceByTag)
    */
   mutating func sortUIViewsInPlaceByTag() {
-    sortInPlace { (left: Element, right: Element) in
+    sort { (left: Element, right: Element) in
       left.tag < right.tag
     }
   }

@@ -10,8 +10,8 @@ import UIKit
 
 extension UITableViewCell {
   
-  override public var layoutMargins: UIEdgeInsets {
-    get { return UIEdgeInsetsZero }
+  override open var layoutMargins: UIEdgeInsets {
+    get { return UIEdgeInsets.zero }
     set { }
   }
   

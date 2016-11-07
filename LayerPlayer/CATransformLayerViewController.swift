@@ -8,11 +8,11 @@
 
 import UIKit
 
-func degreesToRadians(degrees: Double) -> CGFloat {
+func degreesToRadians(_ degrees: Double) -> CGFloat {
   return CGFloat(degrees * M_PI / 180.0)
 }
 
-func radiansToDegrees(radians: Double) -> CGFloat {
+func radiansToDegrees(_ radians: Double) -> CGFloat {
   return CGFloat(radians / M_PI * 180.0)
 }
 
@@ -23,19 +23,19 @@ class CATransformLayerViewController: UIViewController {
   @IBOutlet var colorAlphaSwitches: [UISwitch]!
   
   enum Color: Int {
-    case Red, Orange, Yellow, Green, Blue, Purple
+    case red, orange, yellow, green, blue, purple
   }
   let sideLength = CGFloat(160.0)
   let reducedAlpha = CGFloat(0.8)
   
   var transformLayer: CATransformLayer!
   let swipeMeTextLayer = CATextLayer()
-  var redColor = UIColor.redColor()
-  var orangeColor = UIColor.orangeColor()
-  var yellowColor = UIColor.yellowColor()
-  var greenColor = UIColor.greenColor()
-  var blueColor = UIColor.blueColor()
-  var purpleColor = UIColor.purpleColor()
+  var redColor = UIColor.red
+  var orangeColor = UIColor.orange
+  var yellowColor = UIColor.yellow
+  var greenColor = UIColor.green
+  var blueColor = UIColor.blue
+  var purpleColor = UIColor.purple
   var trackBall: TrackBall?
   
   // MARK: - Quick reference
@@ -48,11 +48,11 @@ class CATransformLayerViewController: UIViewController {
     swipeMeTextLayer.frame = CGRect(x: 0.0, y: sideLength / 4.0, width: sideLength, height: sideLength / 2.0)
     swipeMeTextLayer.string = "Swipe Me"
     swipeMeTextLayer.alignmentMode = kCAAlignmentCenter
-    swipeMeTextLayer.foregroundColor = UIColor.whiteColor().CGColor
+    swipeMeTextLayer.foregroundColor = UIColor.white.cgColor
     let fontName = "Noteworthy-Light" as CFString
     let fontRef = CTFontCreateWithName(fontName, 24.0, nil)
     swipeMeTextLayer.font = fontRef
-    swipeMeTextLayer.contentsScale = UIScreen.mainScreen().scale
+    swipeMeTextLayer.contentsScale = UIScreen.main.scale
   }
   
   // MARK: - View life cycle
@@ -66,21 +66,21 @@ class CATransformLayerViewController: UIViewController {
   
   // MARK: - IBActions
   
-  @IBAction func colorAlphaSwitchChanged(sender: UISwitch) {
-    let alpha = sender.on ? reducedAlpha : 1.0
+  @IBAction func colorAlphaSwitchChanged(_ sender: UISwitch) {
+    let alpha = sender.isOn ? reducedAlpha : 1.0
     
-    switch (colorAlphaSwitches as NSArray).indexOfObject(sender) {
-    case Color.Red.rawValue:
+    switch (colorAlphaSwitches as NSArray).index(of: sender) {
+    case Color.red.rawValue:
       redColor = colorForColor(redColor, withAlpha: alpha)
-    case Color.Orange.rawValue:
+    case Color.orange.rawValue:
       orangeColor = colorForColor(orangeColor, withAlpha: alpha)
-    case Color.Yellow.rawValue:
+    case Color.yellow.rawValue:
       yellowColor = colorForColor(yellowColor, withAlpha: alpha)
-    case Color.Green.rawValue:
+    case Color.green.rawValue:
       greenColor = colorForColor(greenColor, withAlpha: alpha)
-    case Color.Blue.rawValue:
+    case Color.blue.rawValue:
       blueColor = colorForColor(blueColor, withAlpha: alpha)
-    case Color.Purple.rawValue:
+    case Color.purple.rawValue:
       purpleColor = colorForColor(purpleColor, withAlpha: alpha)
     default:
       break
@@ -92,8 +92,8 @@ class CATransformLayerViewController: UIViewController {
   
   // MARK: - Triggered actions
   
-  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    if let location = touches.first?.locationInView(viewForTransformLayer) {
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    if let location = touches.first?.location(in: viewForTransformLayer) {
       if trackBall != nil {
         trackBall?.setStartPointFromLocation(location)
       } else {
@@ -109,29 +109,29 @@ class CATransformLayerViewController: UIViewController {
     }
   }
   
-  override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    if let location = touches.first?.locationInView(viewForTransformLayer) {
+  override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    if let location = touches.first?.location(in: viewForTransformLayer) {
       if let transform = trackBall?.rotationTransformForLocation(location) {
         viewForTransformLayer.layer.sublayerTransform = transform
       }
     }
   }
   
-  override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    if let location = touches.first?.locationInView(viewForTransformLayer) {
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    if let location = touches.first?.location(in: viewForTransformLayer) {
       trackBall?.finalizeTrackBallForLocation(location)
     }
   }
   
   func showBoxTappedLabel() {
     boxTappedLabel.alpha = 1.0
-    boxTappedLabel.hidden = false
+    boxTappedLabel.isHidden = false
     
-    UIView.animateWithDuration(0.5, animations: {
+    UIView.animate(withDuration: 0.5, animations: {
       self.boxTappedLabel.alpha = 0.0
       }, completion: {
         [unowned self] _ in
-        self.boxTappedLabel.hidden = true
+        self.boxTappedLabel.isHidden = true
     })
   }
   
@@ -176,15 +176,16 @@ class CATransformLayerViewController: UIViewController {
     viewForTransformLayer.layer.addSublayer(transformLayer)
   }
   
-  func sideLayerWithColor(color: UIColor) -> CALayer {
+  func sideLayerWithColor(_ color: UIColor) -> CALayer {
     let layer = CALayer()
-    layer.frame = CGRect(origin: CGPointZero, size: CGSize(width: sideLength, height: sideLength))
-    layer.position = CGPoint(x: CGRectGetMidX(viewForTransformLayer.bounds), y: CGRectGetMidY(viewForTransformLayer.bounds))
-    layer.backgroundColor = color.CGColor
+    layer.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: sideLength, height: sideLength))
+    layer.position = CGPoint(x: viewForTransformLayer.bounds.midX, y: viewForTransformLayer.bounds.midY)
+    layer.backgroundColor = color.cgColor
     return layer
   }
   
-  func colorForColor(var color: UIColor, withAlpha newAlpha: CGFloat) -> UIColor {
+  func colorForColor(_ color: UIColor, withAlpha newAlpha: CGFloat) -> UIColor {
+    var color = color
     var red = CGFloat()
     var green = red, blue = red, alpha = red
     

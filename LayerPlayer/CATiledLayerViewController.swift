@@ -48,50 +48,50 @@ class CATiledLayerViewController: UIViewController, UIScrollViewDelegate {
   
   // MARK: - IBActions
     
-  @IBAction func fadeDurationSliderChanged(sender: UISlider) {
+  @IBAction func fadeDurationSliderChanged(_ sender: UISlider) {
     TiledLayer.setFadeDuration(CFTimeInterval(sender.value))
     updateFadeDurationSliderValueLabel()
     tiledLayer.contents = nil
-    tiledLayer.setNeedsDisplayInRect(tiledLayer.bounds)
+    tiledLayer.setNeedsDisplayIn(tiledLayer.bounds)
   }
   
-  @IBAction func tileSizeSliderChanged(sender: UISlider) {
+  @IBAction func tileSizeSliderChanged(_ sender: UISlider) {
     let value = Int(sender.value)
     tiledLayer.tileSize = CGSize(width: value, height: value)
     updateTileSizeSliderValueLabel()
   }
   
-  @IBAction func levelsOfDetailSliderChanged(sender: UISlider) {
+  @IBAction func levelsOfDetailSliderChanged(_ sender: UISlider) {
     tiledLayer.levelsOfDetail = Int(sender.value)
     updateLevelsOfDetailSliderValueLabel()
   }
   
-  @IBAction func levelsOfDetailSliderTouchedUp(sender: AnyObject) {
+  @IBAction func levelsOfDetailSliderTouchedUp(_ sender: AnyObject) {
     showZoomLabel()
   }
   
   func showZoomLabel() {
     zoomLabel.alpha = 1.0
-    zoomLabel.hidden = false
+    zoomLabel.isHidden = false
     let label = zoomLabel
     
-    UIView.animateWithDuration(1.0, delay: 0.0, options: [], animations: {
-      label.alpha = 0
+    UIView.animate(withDuration: 1.0, delay: 0.0, options: [], animations: {
+      label?.alpha = 0
       }, completion: { _ in
-        label.hidden = true
+        label?.isHidden = true
     })
   }
   
-  @IBAction func detailBiasSliderChanged(sender: UISlider) {
+  @IBAction func detailBiasSliderChanged(_ sender: UISlider) {
     tiledLayer.levelsOfDetailBias = Int(sender.value)
     updateDetailBiasSliderValueLabel()
   }
   
-  @IBAction func detailBiasSliderTouchedUp(sender: AnyObject) {
+  @IBAction func detailBiasSliderTouchedUp(_ sender: AnyObject) {
     showZoomLabel()
   }
   
-  @IBAction func zoomScaleSliderChanged(sender: UISlider) {
+  @IBAction func zoomScaleSliderChanged(_ sender: UISlider) {
     scrollView.zoomScale = CGFloat(sender.value)
     updateZoomScaleSliderValueLabel()
   }
@@ -99,7 +99,7 @@ class CATiledLayerViewController: UIViewController, UIScrollViewDelegate {
   // MARK: - Helpers
   
   func setUpTileImageLayerButton() {
-    tiledImageLayerButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "LayerPlayer", size: 23.0)!], forState: .Normal)
+    tiledImageLayerButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "LayerPlayer", size: 23.0)!], for: UIControlState())
   }
   
   func updateFadeDurationSliderValueLabel() {
@@ -124,11 +124,11 @@ class CATiledLayerViewController: UIViewController, UIScrollViewDelegate {
   
   // MARK: UIScrollViewDelegate
   
-  func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+  func viewForZooming(in scrollView: UIScrollView) -> UIView? {
     return viewForTiledLayer
   }
   
-  func scrollViewDidZoom(scrollView: UIScrollView) {
+  func scrollViewDidZoom(_ scrollView: UIScrollView) {
     zoomScaleSlider.setValue(Float(scrollView.zoomScale), animated: true)
     updateZoomScaleSliderValueLabel()
   }
