@@ -9,11 +9,11 @@
 import UIKit
 
 func degreesToRadians(_ degrees: Double) -> CGFloat {
-  return CGFloat(degrees * M_PI / 180.0)
+  return CGFloat(degrees * Double.pi / 180.0)
 }
 
 func radiansToDegrees(_ radians: Double) -> CGFloat {
-  return CGFloat(radians / M_PI * 180.0)
+  return CGFloat(radians / Double.pi * 180.0)
 }
 
 class CATransformLayerViewController: UIViewController {

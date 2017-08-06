@@ -52,7 +52,7 @@ class CATiledLayerViewController: UIViewController, UIScrollViewDelegate {
     TiledLayer.setFadeDuration(CFTimeInterval(sender.value))
     updateFadeDurationSliderValueLabel()
     tiledLayer.contents = nil
-    tiledLayer.setNeedsDisplayIn(tiledLayer.bounds)
+    tiledLayer.setNeedsDisplay(tiledLayer.bounds)
   }
   
   @IBAction func tileSizeSliderChanged(_ sender: UISlider) {
@@ -99,7 +99,7 @@ class CATiledLayerViewController: UIViewController, UIScrollViewDelegate {
   // MARK: - Helpers
   
   func setUpTileImageLayerButton() {
-    tiledImageLayerButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "LayerPlayer", size: 23.0)!], for: UIControlState())
+    tiledImageLayerButton.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "LayerPlayer", size: 23.0)!], for: UIControlState())
   }
   
   func updateFadeDurationSliderValueLabel() {

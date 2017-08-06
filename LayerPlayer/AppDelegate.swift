@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UILabel.appearance(whenContainedInInstancesOf: [UITableViewCell.self]).font = UIFont(name: "Avenir-light", size: 14.0)
     UINavigationBar.appearance().tintColor = UIColor.white
     UINavigationBar.appearance().barTintColor = swiftOrangeColor
-    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Avenir-light", size: 20.0)!]
+    UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "Avenir-light", size: 20.0)!]
     UITableView.appearance().separatorColor = swiftOrangeColor
     UITableViewCell.appearance().separatorInset = UIEdgeInsets.zero
     UIControl.appearance().tintColor = swiftOrangeColor

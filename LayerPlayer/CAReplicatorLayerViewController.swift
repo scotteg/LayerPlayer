@@ -42,7 +42,7 @@ class CAReplicatorLayerViewController: UIViewController {
     replicatorLayer.instanceGreenOffset = offsetValueForSwitch(offsetGreenSwitch)
     replicatorLayer.instanceBlueOffset = offsetValueForSwitch(offsetBlueSwitch)
     replicatorLayer.instanceAlphaOffset = offsetValueForSwitch(offsetAlphaSwitch)
-    let angle = Float(M_PI * 2.0) / count
+    let angle = Float(Double.pi * 2.0) / count
     replicatorLayer.instanceTransform = CATransform3DMakeRotation(CGFloat(angle), 0.0, 0.0, 1.0)
   }
   
