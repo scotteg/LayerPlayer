@@ -13,10 +13,6 @@
         <scene sceneID="MjN-7r-eM3">
             <objects>
                 <viewController id="Nkn-1E-pBe" customClass="CAReplicatorLayerViewController" customModule="LayerPlayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Nbj-LH-HkW"/>
-                        <viewControllerLayoutGuide type="bottom" id="AIQ-rH-Mlu"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Tr9-u7-hxF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,11 +212,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ixn-5e-2Ri" firstAttribute="centerY" secondItem="Tr9-u7-hxF" secondAttribute="centerY" priority="750" id="0lt-aZ-oJn"/>
-                            <constraint firstItem="AIQ-rH-Mlu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ixn-5e-2Ri" secondAttribute="bottom" constant="16" id="4zp-JQ-gMY"/>
-                            <constraint firstItem="ixn-5e-2Ri" firstAttribute="centerX" secondItem="Tr9-u7-hxF" secondAttribute="centerX" id="jGL-dt-fkD"/>
-                            <constraint firstItem="ixn-5e-2Ri" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Nbj-LH-HkW" secondAttribute="bottom" constant="16" id="pPE-ba-RTe"/>
+                            <constraint firstItem="Tp6-y1-oi7" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ixn-5e-2Ri" secondAttribute="bottom" constant="16" id="4zp-JQ-gMY"/>
+                            <constraint firstItem="ixn-5e-2Ri" firstAttribute="centerX" secondItem="Tp6-y1-oi7" secondAttribute="centerX" id="jGL-dt-fkD"/>
+                            <constraint firstItem="ixn-5e-2Ri" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Tp6-y1-oi7" secondAttribute="top" constant="16" id="pPE-ba-RTe"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="jKY-J5-rue"/>
+                        <viewLayoutGuide key="safeArea" id="Tp6-y1-oi7"/>
                     </view>
                     <navigationItem key="navigationItem" title="CAReplicatorLayer" id="wAX-Pu-3mE"/>
                     <connections>

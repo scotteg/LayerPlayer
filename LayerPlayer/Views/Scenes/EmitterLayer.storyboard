@@ -13,10 +13,6 @@
         <scene sceneID="kvf-aH-BwU">
             <objects>
                 <viewController id="IQ1-YV-7u6" customClass="CAEmitterLayerViewController" customModule="LayerPlayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Kkf-Z6-wof"/>
-                        <viewControllerLayoutGuide type="bottom" id="ARJ-jz-HIt"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iDb-O7-5As">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,41 +31,41 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aKu-Ud-OFJ" firstAttribute="leading" secondItem="iDb-O7-5As" secondAttribute="leading" id="0uF-MV-iIp"/>
+                            <constraint firstItem="aKu-Ud-OFJ" firstAttribute="leading" secondItem="cmP-RB-riy" secondAttribute="leading" id="0uF-MV-iIp"/>
                             <constraint firstItem="aKu-Ud-OFJ" firstAttribute="width" secondItem="iDb-O7-5As" secondAttribute="width" id="81v-S8-jwI"/>
                             <constraint firstItem="qZg-Ff-2Yh" firstAttribute="top" secondItem="aKu-Ud-OFJ" secondAttribute="bottom" id="82r-YW-3BS"/>
-                            <constraint firstItem="ARJ-jz-HIt" firstAttribute="top" secondItem="aKu-Ud-OFJ" secondAttribute="bottom" id="AdP-9h-GNK"/>
+                            <constraint firstItem="cmP-RB-riy" firstAttribute="bottom" secondItem="aKu-Ud-OFJ" secondAttribute="bottom" id="AdP-9h-GNK"/>
                             <constraint firstItem="qZg-Ff-2Yh" firstAttribute="top" secondItem="aKu-Ud-OFJ" secondAttribute="bottom" id="ETm-bq-mz7"/>
                             <constraint firstItem="qZg-Ff-2Yh" firstAttribute="width" secondItem="aKu-Ud-OFJ" secondAttribute="width" id="Fl8-hs-4Ap"/>
                             <constraint firstItem="qZg-Ff-2Yh" firstAttribute="height" secondItem="aKu-Ud-OFJ" secondAttribute="height" id="Xnf-em-m9t"/>
-                            <constraint firstAttribute="trailing" secondItem="qZg-Ff-2Yh" secondAttribute="trailing" id="b2X-Zd-VBo"/>
-                            <constraint firstItem="ARJ-jz-HIt" firstAttribute="top" secondItem="qZg-Ff-2Yh" secondAttribute="bottom" id="iOv-da-nex"/>
-                            <constraint firstItem="qZg-Ff-2Yh" firstAttribute="top" secondItem="Kkf-Z6-wof" secondAttribute="bottom" id="jL9-td-Wnx"/>
-                            <constraint firstItem="aKu-Ud-OFJ" firstAttribute="top" secondItem="Kkf-Z6-wof" secondAttribute="bottom" id="pMs-ip-FK6"/>
-                            <constraint firstAttribute="trailing" secondItem="aKu-Ud-OFJ" secondAttribute="trailing" id="s89-0r-5GH"/>
-                            <constraint firstItem="qZg-Ff-2Yh" firstAttribute="leading" secondItem="iDb-O7-5As" secondAttribute="leading" id="sry-AG-1LF"/>
+                            <constraint firstItem="cmP-RB-riy" firstAttribute="trailing" secondItem="qZg-Ff-2Yh" secondAttribute="trailing" id="b2X-Zd-VBo"/>
+                            <constraint firstItem="cmP-RB-riy" firstAttribute="bottom" secondItem="qZg-Ff-2Yh" secondAttribute="bottom" id="iOv-da-nex"/>
+                            <constraint firstItem="qZg-Ff-2Yh" firstAttribute="top" secondItem="cmP-RB-riy" secondAttribute="top" id="jL9-td-Wnx"/>
+                            <constraint firstItem="aKu-Ud-OFJ" firstAttribute="top" secondItem="cmP-RB-riy" secondAttribute="top" id="pMs-ip-FK6"/>
+                            <constraint firstItem="cmP-RB-riy" firstAttribute="trailing" secondItem="aKu-Ud-OFJ" secondAttribute="trailing" id="s89-0r-5GH"/>
+                            <constraint firstItem="qZg-Ff-2Yh" firstAttribute="leading" secondItem="cmP-RB-riy" secondAttribute="leading" id="sry-AG-1LF"/>
                             <constraint firstItem="qZg-Ff-2Yh" firstAttribute="leading" secondItem="aKu-Ud-OFJ" secondAttribute="trailing" id="tNP-aj-CRe"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="NaJ-5G-G2X"/>
+                        <viewLayoutGuide key="safeArea" id="cmP-RB-riy"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="81v-S8-jwI"/>
+                                <exclude reference="Fl8-hs-4Ap"/>
                                 <exclude reference="jL9-td-Wnx"/>
                                 <exclude reference="tNP-aj-CRe"/>
-                                <exclude reference="Fl8-hs-4Ap"/>
                                 <exclude reference="AdP-9h-GNK"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <exclude reference="s89-0r-5GH"/>
-                                <include reference="jL9-td-Wnx"/>
-                                <exclude reference="ETm-bq-mz7"/>
-                                <include reference="tNP-aj-CRe"/>
-                                <exclude reference="Xnf-em-m9t"/>
                                 <exclude reference="82r-YW-3BS"/>
+                                <exclude reference="ETm-bq-mz7"/>
                                 <include reference="Fl8-hs-4Ap"/>
+                                <exclude reference="Xnf-em-m9t"/>
+                                <include reference="jL9-td-Wnx"/>
                                 <exclude reference="sry-AG-1LF"/>
+                                <include reference="tNP-aj-CRe"/>
                                 <include reference="AdP-9h-GNK"/>
                             </mask>
                         </variation>
@@ -143,8 +139,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="jH1-33-Fo2"/>
                                                     <exclude reference="cIq-s9-Nm8"/>
+                                                    <exclude reference="jH1-33-Fo2"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

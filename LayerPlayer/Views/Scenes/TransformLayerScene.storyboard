@@ -13,10 +13,6 @@
         <scene sceneID="lAh-AP-IcW">
             <objects>
                 <viewController id="67R-ic-xaD" customClass="CATransformLayerViewController" customModule="LayerPlayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8uz-Nb-vme"/>
-                        <viewControllerLayoutGuide type="bottom" id="QNI-r7-xo4"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kWy-Wn-X7J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,12 +187,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xrk-NP-E21" firstAttribute="centerX" secondItem="kWy-Wn-X7J" secondAttribute="centerX" id="E8l-5a-cC9"/>
-                            <constraint firstItem="QNI-r7-xo4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xrk-NP-E21" secondAttribute="bottom" constant="8" id="EvF-jm-SXs"/>
+                            <constraint firstItem="xrk-NP-E21" firstAttribute="centerX" secondItem="kPF-zt-wjz" secondAttribute="centerX" id="E8l-5a-cC9"/>
+                            <constraint firstItem="kPF-zt-wjz" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xrk-NP-E21" secondAttribute="bottom" constant="8" id="EvF-jm-SXs"/>
                             <constraint firstItem="xrk-NP-E21" firstAttribute="centerY" secondItem="kWy-Wn-X7J" secondAttribute="centerY" priority="750" id="WIa-Km-yHb"/>
-                            <constraint firstItem="xrk-NP-E21" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8uz-Nb-vme" secondAttribute="bottom" constant="8" id="XNq-qs-G5t"/>
+                            <constraint firstItem="xrk-NP-E21" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kPF-zt-wjz" secondAttribute="top" constant="8" id="XNq-qs-G5t"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Buj-KX-bnD"/>
+                        <viewLayoutGuide key="safeArea" id="kPF-zt-wjz"/>
                     </view>
                     <navigationItem key="navigationItem" title="CATransformLayer" id="r5O-r9-hhz"/>
                     <connections>

@@ -14,10 +14,6 @@
         <scene sceneID="ULq-b3-gRS">
             <objects>
                 <viewController id="HGI-0V-yuB" customClass="AVPlayerLayerViewController" customModule="LayerPlayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BI5-5U-gNA"/>
-                        <viewControllerLayoutGuide type="bottom" id="k30-iw-LI3"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VFx-7R-Ed1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,9 +98,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZqF-np-vrq" firstAttribute="centerY" secondItem="VFx-7R-Ed1" secondAttribute="centerY" id="bpb-Ws-dRb"/>
-                            <constraint firstItem="ZqF-np-vrq" firstAttribute="centerX" secondItem="VFx-7R-Ed1" secondAttribute="centerX" id="qh9-1C-Iek"/>
+                            <constraint firstItem="ZqF-np-vrq" firstAttribute="centerX" secondItem="eOP-P1-Fqc" secondAttribute="centerX" id="qh9-1C-Iek"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="hm7-0W-Kw5"/>
+                        <viewLayoutGuide key="safeArea" id="eOP-P1-Fqc"/>
                     </view>
                     <navigationItem key="navigationItem" title="AVPlayerLayer" id="d04-X5-dYc"/>
                     <connections>

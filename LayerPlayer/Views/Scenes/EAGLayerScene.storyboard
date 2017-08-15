@@ -12,12 +12,7 @@
         <!--CAEAGLLayer-->
         <scene sceneID="Ye6-u4-Tc9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uMr-u8-lbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hGo-df-Oww" customClass="ObjC_CAEAGLLayerViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3i-su-xzD"/>
-                        <viewControllerLayoutGuide type="bottom" id="1dw-6N-Y9y"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="288-yj-Ztd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,15 +29,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lke-77-Nlc" firstAttribute="centerY" secondItem="288-yj-Ztd" secondAttribute="centerY" id="JRl-On-UJ8"/>
-                            <constraint firstAttribute="centerX" secondItem="lke-77-Nlc" secondAttribute="centerX" id="M7c-IB-tzI"/>
+                            <constraint firstItem="9Iw-i3-Gvp" firstAttribute="centerX" secondItem="lke-77-Nlc" secondAttribute="centerX" id="M7c-IB-tzI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eRr-3V-5GT"/>
+                        <viewLayoutGuide key="safeArea" id="9Iw-i3-Gvp"/>
                     </view>
                     <navigationItem key="navigationItem" title="CAEAGLLayer" id="raM-om-5mI"/>
                     <connections>
                         <outlet property="viewForEAGLLayer" destination="lke-77-Nlc" id="1YG-Ob-A4u"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMr-u8-lbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1640" y="6700"/>
         </scene>

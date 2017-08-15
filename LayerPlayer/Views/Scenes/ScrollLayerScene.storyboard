@@ -13,10 +13,6 @@
         <scene sceneID="jOu-WQ-JiG">
             <objects>
                 <viewController id="pav-ag-75p" customClass="CAScrollLayerViewController" customModule="LayerPlayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IH4-4A-6gi"/>
-                        <viewControllerLayoutGuide type="bottom" id="DVP-0z-jCL"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="d2w-19-UH6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,11 +81,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="ikx-qD-TC1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IH4-4A-6gi" secondAttribute="bottom" constant="8" id="fNN-0T-GkO"/>
+                            <constraint firstItem="ikx-qD-TC1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Jb2-zK-KdX" secondAttribute="top" constant="8" id="fNN-0T-GkO"/>
                             <constraint firstItem="ikx-qD-TC1" firstAttribute="centerY" secondItem="d2w-19-UH6" secondAttribute="centerY" priority="750" id="n6e-c3-chO"/>
-                            <constraint firstItem="ikx-qD-TC1" firstAttribute="centerX" secondItem="d2w-19-UH6" secondAttribute="centerX" id="v7U-Sk-59P"/>
+                            <constraint firstItem="ikx-qD-TC1" firstAttribute="centerX" secondItem="Jb2-zK-KdX" secondAttribute="centerX" id="v7U-Sk-59P"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="x9U-6J-PjT"/>
+                        <viewLayoutGuide key="safeArea" id="Jb2-zK-KdX"/>
                     </view>
                     <navigationItem key="navigationItem" title="CAScrollLayer" id="GOV-ew-1Cl"/>
                     <connections>

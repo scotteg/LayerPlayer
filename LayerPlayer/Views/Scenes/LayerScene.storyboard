@@ -13,10 +13,6 @@
         <scene sceneID="Wzj-3o-L1m">
             <objects>
                 <viewController id="chf-Pf-MlP" customClass="CALayerViewController" customModule="LayerPlayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="taW-d1-Y3p"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qqn-NF-cAD"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MGE-Jg-ff4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,9 +43,9 @@
                                 <variation key="heightClass=compact">
                                     <mask key="constraints">
                                         <include reference="8Hu-SE-sBG"/>
+                                        <include reference="HWh-DB-XN7"/>
                                         <exclude reference="X9k-dH-oUi"/>
                                         <exclude reference="yZm-mX-mug"/>
-                                        <include reference="HWh-DB-XN7"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -63,32 +59,32 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="bpZ-aS-fCI" secondAttribute="trailing" id="5Bc-nF-3SC"/>
-                            <constraint firstItem="Qqn-NF-cAD" firstAttribute="top" secondItem="HwM-2h-Dug" secondAttribute="bottom" id="Bmj-ZQ-UQT"/>
-                            <constraint firstAttribute="trailing" secondItem="HwM-2h-Dug" secondAttribute="trailing" id="LGd-5X-Eyh"/>
-                            <constraint firstAttribute="trailing" secondItem="HwM-2h-Dug" secondAttribute="trailing" id="WX9-gn-y8k"/>
-                            <constraint firstItem="bpZ-aS-fCI" firstAttribute="leading" secondItem="MGE-Jg-ff4" secondAttribute="leading" id="YWs-t0-MK7"/>
-                            <constraint firstItem="HwM-2h-Dug" firstAttribute="leading" secondItem="MGE-Jg-ff4" secondAttribute="leading" id="Zby-77-ByU"/>
-                            <constraint firstItem="HwM-2h-Dug" firstAttribute="top" secondItem="taW-d1-Y3p" secondAttribute="bottom" id="bDF-FK-AWC"/>
+                            <constraint firstItem="Ksk-dU-d0r" firstAttribute="trailing" secondItem="bpZ-aS-fCI" secondAttribute="trailing" id="5Bc-nF-3SC"/>
+                            <constraint firstItem="Ksk-dU-d0r" firstAttribute="bottom" secondItem="HwM-2h-Dug" secondAttribute="bottom" id="Bmj-ZQ-UQT"/>
+                            <constraint firstItem="Ksk-dU-d0r" firstAttribute="trailing" secondItem="HwM-2h-Dug" secondAttribute="trailing" id="LGd-5X-Eyh"/>
+                            <constraint firstItem="Ksk-dU-d0r" firstAttribute="trailing" secondItem="HwM-2h-Dug" secondAttribute="trailing" id="WX9-gn-y8k"/>
+                            <constraint firstItem="bpZ-aS-fCI" firstAttribute="leading" secondItem="Ksk-dU-d0r" secondAttribute="leading" id="YWs-t0-MK7"/>
+                            <constraint firstItem="HwM-2h-Dug" firstAttribute="leading" secondItem="Ksk-dU-d0r" secondAttribute="leading" id="Zby-77-ByU"/>
+                            <constraint firstItem="HwM-2h-Dug" firstAttribute="top" secondItem="Ksk-dU-d0r" secondAttribute="top" id="bDF-FK-AWC"/>
                             <constraint firstItem="HwM-2h-Dug" firstAttribute="leading" secondItem="bpZ-aS-fCI" secondAttribute="trailing" id="be9-NV-a3Y"/>
-                            <constraint firstItem="Qqn-NF-cAD" firstAttribute="top" secondItem="HwM-2h-Dug" secondAttribute="bottom" id="cFD-s5-zCD"/>
-                            <constraint firstItem="bpZ-aS-fCI" firstAttribute="leading" secondItem="MGE-Jg-ff4" secondAttribute="leading" id="egI-Hz-WFz"/>
-                            <constraint firstItem="Qqn-NF-cAD" firstAttribute="top" secondItem="bpZ-aS-fCI" secondAttribute="bottom" id="hqz-df-J7e"/>
-                            <constraint firstItem="bpZ-aS-fCI" firstAttribute="top" secondItem="taW-d1-Y3p" secondAttribute="bottom" id="mpY-2u-oIO"/>
+                            <constraint firstItem="Ksk-dU-d0r" firstAttribute="bottom" secondItem="HwM-2h-Dug" secondAttribute="bottom" id="cFD-s5-zCD"/>
+                            <constraint firstItem="bpZ-aS-fCI" firstAttribute="leading" secondItem="Ksk-dU-d0r" secondAttribute="leading" id="egI-Hz-WFz"/>
+                            <constraint firstItem="Ksk-dU-d0r" firstAttribute="bottom" secondItem="bpZ-aS-fCI" secondAttribute="bottom" id="hqz-df-J7e"/>
+                            <constraint firstItem="bpZ-aS-fCI" firstAttribute="top" secondItem="Ksk-dU-d0r" secondAttribute="top" id="mpY-2u-oIO"/>
                             <constraint firstItem="HwM-2h-Dug" firstAttribute="top" secondItem="bpZ-aS-fCI" secondAttribute="bottom" id="mwy-Le-hFQ"/>
-                            <constraint firstItem="bpZ-aS-fCI" firstAttribute="top" secondItem="taW-d1-Y3p" secondAttribute="bottom" id="p1N-dm-aTJ"/>
+                            <constraint firstItem="bpZ-aS-fCI" firstAttribute="top" secondItem="Ksk-dU-d0r" secondAttribute="top" id="p1N-dm-aTJ"/>
                             <constraint firstItem="bpZ-aS-fCI" firstAttribute="width" secondItem="HwM-2h-Dug" secondAttribute="width" id="prb-PS-BwG"/>
                             <constraint firstItem="bpZ-aS-fCI" firstAttribute="height" secondItem="HwM-2h-Dug" secondAttribute="height" id="v2E-Lo-gdO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="dbG-8j-Dtg"/>
+                        <viewLayoutGuide key="safeArea" id="Ksk-dU-d0r"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="YWs-t0-MK7"/>
-                                <exclude reference="prb-PS-BwG"/>
                                 <exclude reference="mpY-2u-oIO"/>
-                                <exclude reference="be9-NV-a3Y"/>
+                                <exclude reference="prb-PS-BwG"/>
                                 <exclude reference="WX9-gn-y8k"/>
                                 <exclude reference="bDF-FK-AWC"/>
+                                <exclude reference="be9-NV-a3Y"/>
                                 <exclude reference="cFD-s5-zCD"/>
                                 <exclude reference="hqz-df-J7e"/>
                             </mask>
@@ -97,19 +93,19 @@
                             <mask key="constraints">
                                 <exclude reference="5Bc-nF-3SC"/>
                                 <include reference="YWs-t0-MK7"/>
-                                <exclude reference="v2E-Lo-gdO"/>
-                                <include reference="prb-PS-BwG"/>
-                                <exclude reference="p1N-dm-aTJ"/>
                                 <exclude reference="egI-Hz-WFz"/>
                                 <include reference="mpY-2u-oIO"/>
+                                <exclude reference="p1N-dm-aTJ"/>
+                                <include reference="prb-PS-BwG"/>
+                                <exclude reference="v2E-Lo-gdO"/>
+                                <exclude reference="LGd-5X-Eyh"/>
+                                <include reference="WX9-gn-y8k"/>
+                                <exclude reference="Zby-77-ByU"/>
+                                <include reference="bDF-FK-AWC"/>
                                 <include reference="be9-NV-a3Y"/>
                                 <exclude reference="mwy-Le-hFQ"/>
-                                <include reference="WX9-gn-y8k"/>
-                                <exclude reference="LGd-5X-Eyh"/>
-                                <include reference="bDF-FK-AWC"/>
-                                <exclude reference="Zby-77-ByU"/>
-                                <include reference="cFD-s5-zCD"/>
                                 <exclude reference="Bmj-ZQ-UQT"/>
+                                <include reference="cFD-s5-zCD"/>
                                 <include reference="hqz-df-J7e"/>
                             </mask>
                         </variation>
@@ -183,8 +179,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="gxI-ah-Bc8"/>
                                                     <exclude reference="IEC-Vl-3T8"/>
+                                                    <exclude reference="gxI-ah-Bc8"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

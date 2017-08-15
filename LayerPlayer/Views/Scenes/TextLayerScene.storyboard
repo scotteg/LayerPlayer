@@ -13,10 +13,6 @@
         <scene sceneID="hvE-qe-0M1">
             <objects>
                 <viewController id="9fz-Ub-5qE" customClass="CATextLayerViewController" customModule="LayerPlayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="A5v-ae-KZ5"/>
-                        <viewControllerLayoutGuide type="bottom" id="tAC-fx-oMC"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pkX-VZ-PP4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,12 +147,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="3mw-OG-qtI" secondAttribute="trailing" constant="16" id="JL0-ec-Slz"/>
-                            <constraint firstItem="3mw-OG-qtI" firstAttribute="top" secondItem="A5v-ae-KZ5" secondAttribute="bottom" constant="16" id="lrf-oR-fHg"/>
-                            <constraint firstItem="3mw-OG-qtI" firstAttribute="leading" secondItem="pkX-VZ-PP4" secondAttribute="leading" constant="16" id="rV2-j4-6we"/>
-                            <constraint firstItem="tAC-fx-oMC" firstAttribute="top" secondItem="3mw-OG-qtI" secondAttribute="bottom" constant="16" id="unh-xc-foC"/>
+                            <constraint firstItem="NkK-Yy-ju1" firstAttribute="trailing" secondItem="3mw-OG-qtI" secondAttribute="trailing" constant="16" id="JL0-ec-Slz"/>
+                            <constraint firstItem="3mw-OG-qtI" firstAttribute="top" secondItem="NkK-Yy-ju1" secondAttribute="top" constant="16" id="lrf-oR-fHg"/>
+                            <constraint firstItem="3mw-OG-qtI" firstAttribute="leading" secondItem="NkK-Yy-ju1" secondAttribute="leading" constant="16" id="rV2-j4-6we"/>
+                            <constraint firstItem="NkK-Yy-ju1" firstAttribute="bottom" secondItem="3mw-OG-qtI" secondAttribute="bottom" constant="16" id="unh-xc-foC"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="BY7-k0-Vza"/>
+                        <viewLayoutGuide key="safeArea" id="NkK-Yy-ju1"/>
                     </view>
                     <navigationItem key="navigationItem" title="CATextLayer" id="Cq5-kq-vXe"/>
                     <connections>

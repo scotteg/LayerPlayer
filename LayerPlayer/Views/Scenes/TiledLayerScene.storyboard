@@ -12,12 +12,7 @@
         <!--CATiledLayer-->
         <scene sceneID="boB-0v-KmV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2MN-Pr-nkr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="8Dl-wN-Lzw" customClass="CATiledLayerViewController" customModule="LayerPlayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DuU-AE-nSa"/>
-                        <viewControllerLayoutGuide type="bottom" id="VeQ-8Z-EPt"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="i6C-IU-j2c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,12 +208,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cFr-Z8-0or" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DuU-AE-nSa" secondAttribute="bottom" constant="8" id="CTG-GX-XEa"/>
-                            <constraint firstItem="VeQ-8Z-EPt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cFr-Z8-0or" secondAttribute="bottom" constant="8" id="NBx-gi-Smc"/>
-                            <constraint firstItem="cFr-Z8-0or" firstAttribute="centerX" secondItem="i6C-IU-j2c" secondAttribute="centerX" id="V8E-wH-5QK"/>
+                            <constraint firstItem="cFr-Z8-0or" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RuU-lD-c6s" secondAttribute="top" constant="8" id="CTG-GX-XEa"/>
+                            <constraint firstItem="RuU-lD-c6s" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cFr-Z8-0or" secondAttribute="bottom" constant="8" id="NBx-gi-Smc"/>
+                            <constraint firstItem="cFr-Z8-0or" firstAttribute="centerX" secondItem="RuU-lD-c6s" secondAttribute="centerX" id="V8E-wH-5QK"/>
                             <constraint firstItem="cFr-Z8-0or" firstAttribute="centerY" secondItem="i6C-IU-j2c" secondAttribute="centerY" priority="750" id="wz9-Xv-qRw"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EU4-L8-DN7"/>
+                        <viewLayoutGuide key="safeArea" id="RuU-lD-c6s"/>
                     </view>
                     <navigationItem key="navigationItem" title="CATiledLayer" id="SH8-Uq-kYc">
                         <barButtonItem key="rightBarButtonItem" title="p" id="Wx9-Fk-iNs">
@@ -244,18 +239,14 @@
                         <outlet property="zoomScaleSliderValueLabel" destination="BHs-ph-1JY" id="dFp-cu-0Ej"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2MN-Pr-nkr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1640" y="5136"/>
         </scene>
         <!--CATiledLayer (image)-->
         <scene sceneID="hx5-r9-QgA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e0Z-P5-gPL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="22m-hg-Izq" customClass="CATiledImageLayerViewController" customModule="LayerPlayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6A1-ao-5fD"/>
-                        <viewControllerLayoutGuide type="bottom" id="Pdj-U9-mYk"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="x0a-AT-csy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -282,12 +273,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nR4-6q-DJl" firstAttribute="leading" secondItem="x0a-AT-csy" secondAttribute="leading" id="16q-E4-fxR"/>
+                            <constraint firstItem="nR4-6q-DJl" firstAttribute="leading" secondItem="St2-qR-6M7" secondAttribute="leading" id="16q-E4-fxR"/>
                             <constraint firstItem="nR4-6q-DJl" firstAttribute="top" secondItem="x0a-AT-csy" secondAttribute="top" id="FYv-xi-3kC"/>
-                            <constraint firstItem="Pdj-U9-mYk" firstAttribute="top" secondItem="nR4-6q-DJl" secondAttribute="bottom" id="ubO-2C-HGg"/>
-                            <constraint firstAttribute="trailing" secondItem="nR4-6q-DJl" secondAttribute="trailing" id="uea-jo-Mi7"/>
+                            <constraint firstItem="St2-qR-6M7" firstAttribute="bottom" secondItem="nR4-6q-DJl" secondAttribute="bottom" id="ubO-2C-HGg"/>
+                            <constraint firstItem="St2-qR-6M7" firstAttribute="trailing" secondItem="nR4-6q-DJl" secondAttribute="trailing" id="uea-jo-Mi7"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="F9p-2D-OW7"/>
+                        <viewLayoutGuide key="safeArea" id="St2-qR-6M7"/>
                     </view>
                     <navigationItem key="navigationItem" title="CATiledLayer (image)" id="icJ-p1-6Et">
                         <barButtonItem key="rightBarButtonItem" title="x" id="x4G-3L-UJE">
@@ -303,6 +294,7 @@
                         <outlet property="tilingView" destination="WCt-aA-AsI" id="fOu-t5-TU3"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e0Z-P5-gPL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3256" y="5136"/>
         </scene>
