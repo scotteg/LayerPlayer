@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HGI-0V-yuB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--AVPlayerLayer-->
+        <scene sceneID="ULq-b3-gRS">
+            <objects>
+                <viewController id="HGI-0V-yuB" customClass="AVPlayerLayerViewController" customModule="LayerPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BI5-5U-gNA"/>
+                        <viewControllerLayoutGuide type="bottom" id="k30-iw-LI3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VFx-7R-Ed1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZqF-np-vrq">
+                                <rect key="frame" x="37.5" y="206.5" width="300" height="254"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohD-6f-UA5">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="169"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="750" constant="300" id="1js-NY-CE2"/>
+                                            <constraint firstAttribute="width" secondItem="ohD-6f-UA5" secondAttribute="height" multiplier="300:169" id="QYs-o4-lzr"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1wL-Xy-QCZ">
+                                        <rect key="frame" x="0.0" y="185" width="300" height="69"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ctT-A6-edr">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqo-mv-oS8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="57.5" height="30"/>
+                                                        <state key="normal" title="Play">
+                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="playButtonTapped:" destination="HGI-0V-yuB" eventType="touchUpInside" id="yBw-dr-856"/>
+                                                        </connections>
+                                                    </button>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="NNU-zF-Pgz">
+                                                        <rect key="frame" x="65.5" y="0.0" width="234.5" height="31"/>
+                                                        <segments>
+                                                            <segment title="1/2x"/>
+                                                            <segment title="Normal"/>
+                                                            <segment title="2x"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="rateSegmentedControlChanged:" destination="HGI-0V-yuB" eventType="valueChanged" id="A1Z-Je-1uq"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kU2-DI-zvA">
+                                                <rect key="frame" x="0.0" y="38" width="300" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr0-bV-tBw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38.5" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENU-Hf-4Ja">
+                                                        <rect key="frame" x="46.5" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="loopSwitchChanged:" destination="HGI-0V-yuB" eventType="valueChanged" id="zkC-tl-NoP"/>
+                                                        </connections>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Volume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amV-wx-DOe">
+                                                        <rect key="frame" x="103.5" y="0.0" width="57.5" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qBq-uP-AjT">
+                                                        <rect key="frame" x="167" y="0.0" width="135" height="32"/>
+                                                        <connections>
+                                                            <action selector="volumeSliderChanged:" destination="HGI-0V-yuB" eventType="valueChanged" id="lSz-fM-8s2"/>
+                                                        </connections>
+                                                    </slider>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Yqo-mv-oS8" firstAttribute="width" secondItem="amV-wx-DOe" secondAttribute="width" id="fLI-xW-vpL"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZqF-np-vrq" firstAttribute="centerY" secondItem="VFx-7R-Ed1" secondAttribute="centerY" id="bpb-Ws-dRb"/>
+                            <constraint firstItem="ZqF-np-vrq" firstAttribute="centerX" secondItem="VFx-7R-Ed1" secondAttribute="centerX" id="qh9-1C-Iek"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hm7-0W-Kw5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="AVPlayerLayer" id="d04-X5-dYc"/>
+                    <connections>
+                        <outlet property="loopSwitch" destination="ENU-Hf-4Ja" id="rXg-aW-k6k"/>
+                        <outlet property="playButton" destination="Yqo-mv-oS8" id="XKs-lt-e4n"/>
+                        <outlet property="rateSegmentedControl" destination="NNU-zF-Pgz" id="58Z-0z-YrV"/>
+                        <outlet property="viewForPlayerLayer" destination="ohD-6f-UA5" id="oTf-zh-89W"/>
+                        <outlet property="volumeSlider" destination="qBq-uP-AjT" id="CqV-Mg-pas"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jyf-xi-3Rh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1640" y="2790"/>
+        </scene>
+    </scenes>
+</document>

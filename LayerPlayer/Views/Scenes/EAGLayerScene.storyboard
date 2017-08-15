@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hGo-df-Oww">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CAEAGLLayer-->
+        <scene sceneID="Ye6-u4-Tc9">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMr-u8-lbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="hGo-df-Oww" customClass="ObjC_CAEAGLLayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3i-su-xzD"/>
+                        <viewControllerLayoutGuide type="bottom" id="1dw-6N-Y9y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="288-yj-Ztd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lke-77-Nlc">
+                                <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="WW2-fh-736"/>
+                                    <constraint firstAttribute="height" constant="250" id="pzx-L3-ET4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lke-77-Nlc" firstAttribute="centerY" secondItem="288-yj-Ztd" secondAttribute="centerY" id="JRl-On-UJ8"/>
+                            <constraint firstAttribute="centerX" secondItem="lke-77-Nlc" secondAttribute="centerX" id="M7c-IB-tzI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eRr-3V-5GT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CAEAGLLayer" id="raM-om-5mI"/>
+                    <connections>
+                        <outlet property="viewForEAGLLayer" destination="lke-77-Nlc" id="1YG-Ob-A4u"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1640" y="6700"/>
+        </scene>
+    </scenes>
+</document>

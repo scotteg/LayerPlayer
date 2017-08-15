@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9fz-Ub-5qE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CATextLayer-->
+        <scene sceneID="hvE-qe-0M1">
+            <objects>
+                <viewController id="9fz-Ub-5qE" customClass="CATextLayerViewController" customModule="LayerPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A5v-ae-KZ5"/>
+                        <viewControllerLayoutGuide type="bottom" id="tAC-fx-oMC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pkX-VZ-PP4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3mw-OG-qtI">
+                                <rect key="frame" x="16" y="36" width="343" height="615"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d46-Rg-ex8">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="468"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dL1-fF-gV4">
+                                        <rect key="frame" x="0.0" y="476" width="343" height="139"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oYP-4e-rJg">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="28"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rlt-xl-aZw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="34.5" height="28"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VHl-u6-VeI">
+                                                        <rect key="frame" x="42.5" y="0.0" width="300.5" height="29"/>
+                                                        <segments>
+                                                            <segment title="Helvetica"/>
+                                                            <segment title="Noteworthy Light"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="fontSegmentedControlChanged:" destination="9fz-Ub-5qE" eventType="valueChanged" id="r4r-If-4sa"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <variation key="heightClass=compact" axis="vertical"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PMU-mw-tbu">
+                                                <rect key="frame" x="0.0" y="36" width="343" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gob-MP-Jks">
+                                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.97254901959999995" green="0.37647058820000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="w3V-Co-lFy">
+                                                        <rect key="frame" x="47.5" y="0.0" width="158.5" height="32"/>
+                                                        <connections>
+                                                            <action selector="fontSizeSliderChanged:" destination="9fz-Ub-5qE" eventType="valueChanged" id="BsX-A3-gkb"/>
+                                                        </connections>
+                                                    </slider>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrap text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Upb-0s-SAm">
+                                                        <rect key="frame" x="212" y="0.0" width="74" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3AL-zX-Euy">
+                                                        <rect key="frame" x="294" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="wrapTextSwitchChanged:" destination="9fz-Ub-5qE" eventType="valueChanged" id="sV3-ze-Zg5"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hJ2-ab-5bb">
+                                                <rect key="frame" x="0.0" y="75" width="343" height="28"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alignment mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xt2-Qc-8LO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125.5" height="28"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aZQ-G2-iOz">
+                                                        <rect key="frame" x="133.5" y="0.0" width="209.5" height="29"/>
+                                                        <segments>
+                                                            <segment title="" image="align_left"/>
+                                                            <segment title="" image="align_center"/>
+                                                            <segment title="" image="align_just"/>
+                                                            <segment title="" image="align_right"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="alignmentModeSegmentedControlChanged:" destination="9fz-Ub-5qE" eventType="valueChanged" id="iE4-9Z-sUV"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <variation key="heightClass=compact" axis="vertical"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wCq-4w-RlV">
+                                                <rect key="frame" x="0.0" y="111" width="343" height="28"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Truncation mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mgt-Ef-VVJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="129.5" height="28"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="iQQ-SH-bUC">
+                                                        <rect key="frame" x="137.5" y="0.0" width="205.5" height="29"/>
+                                                        <segments>
+                                                            <segment title="Start"/>
+                                                            <segment title="Middle"/>
+                                                            <segment title="End"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="truncationModeSegmentedControlChanged:" destination="9fz-Ub-5qE" eventType="valueChanged" id="EXV-ul-Nzs"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <variation key="heightClass=compact" axis="vertical"/>
+                                            </stackView>
+                                        </subviews>
+                                        <variation key="heightClass=compact" distribution="equalSpacing"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="d46-Rg-ex8" secondAttribute="bottom" id="2Sl-9G-viW"/>
+                                    <constraint firstItem="dL1-fF-gV4" firstAttribute="width" secondItem="d46-Rg-ex8" secondAttribute="width" id="tgf-wZ-zXB"/>
+                                    <constraint firstItem="d46-Rg-ex8" firstAttribute="top" secondItem="3mw-OG-qtI" secondAttribute="top" id="wKU-3f-Uxp"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2Sl-9G-viW"/>
+                                        <exclude reference="wKU-3f-Uxp"/>
+                                        <exclude reference="tgf-wZ-zXB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact" alignment="center" axis="horizontal">
+                                    <mask key="constraints">
+                                        <include reference="2Sl-9G-viW"/>
+                                        <include reference="wKU-3f-Uxp"/>
+                                        <include reference="tgf-wZ-zXB"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3mw-OG-qtI" secondAttribute="trailing" constant="16" id="JL0-ec-Slz"/>
+                            <constraint firstItem="3mw-OG-qtI" firstAttribute="top" secondItem="A5v-ae-KZ5" secondAttribute="bottom" constant="16" id="lrf-oR-fHg"/>
+                            <constraint firstItem="3mw-OG-qtI" firstAttribute="leading" secondItem="pkX-VZ-PP4" secondAttribute="leading" constant="16" id="rV2-j4-6we"/>
+                            <constraint firstItem="tAC-fx-oMC" firstAttribute="top" secondItem="3mw-OG-qtI" secondAttribute="bottom" constant="16" id="unh-xc-foC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BY7-k0-Vza"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CATextLayer" id="Cq5-kq-vXe"/>
+                    <connections>
+                        <outlet property="alignmentModeSegmentedControl" destination="aZQ-G2-iOz" id="QpV-Se-qTy"/>
+                        <outlet property="fontSizeSlider" destination="w3V-Co-lFy" id="aNB-xA-x1Z"/>
+                        <outlet property="fontSizeSliderValueLabel" destination="Gob-MP-Jks" id="ggS-PO-03j"/>
+                        <outlet property="truncationModeSegmentedControl" destination="iQQ-SH-bUC" id="M4A-xo-Yoo"/>
+                        <outlet property="viewForTextLayer" destination="d46-Rg-ex8" id="mQn-f0-xXZ"/>
+                        <outlet property="wrapTextSwitch" destination="3AL-zX-Euy" id="kMS-bP-Xx5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2nw-ci-asQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1640" y="2008"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="align_center" width="12" height="12"/>
+        <image name="align_just" width="12" height="12"/>
+        <image name="align_left" width="12" height="12"/>
+        <image name="align_right" width="12" height="12"/>
+    </resources>
+</document>

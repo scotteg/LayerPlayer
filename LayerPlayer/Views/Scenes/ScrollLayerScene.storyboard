@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pav-ag-75p">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CAScrollLayer-->
+        <scene sceneID="jOu-WQ-JiG">
+            <objects>
+                <viewController id="pav-ag-75p" customClass="CAScrollLayerViewController" customModule="LayerPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IH4-4A-6gi"/>
+                        <viewControllerLayoutGuide type="bottom" id="DVP-0z-jCL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d2w-19-UH6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ikx-qD-TC1">
+                                <rect key="frame" x="62.5" y="165.5" width="250" height="336"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tg8-DJ-QxN" customClass="ScrollingView" customModule="LayerPlayer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cresentEarthRisesAboveLunarHorizon" translatesAutoresizingMaskIntoConstraints="NO" id="xn4-SI-S4I">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="HKW-vF-1ne"/>
+                                            <constraint firstAttribute="width" constant="250" id="uzp-L5-FbH"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="6HF-aB-WSH" appends="YES" id="gn7-A8-tx4"/>
+                                        </connections>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ud8-R1-brX">
+                                        <rect key="frame" x="23" y="266" width="204" height="70"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QGu-Q7-SVd">
+                                                <rect key="frame" x="0.0" y="0.0" width="204" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horizontal scrolling" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaZ-87-6pD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EUm-Hw-A5y">
+                                                        <rect key="frame" x="155" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="scrollingSwitchChanged:" destination="pav-ag-75p" eventType="valueChanged" id="KNZ-RH-ltD"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1LU-g9-f6C">
+                                                <rect key="frame" x="20.5" y="39" width="183.5" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vertical scrolling" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A87-sl-DIi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="126.5" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QpE-9H-R89">
+                                                        <rect key="frame" x="134.5" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="scrollingSwitchChanged:" destination="pav-ag-75p" eventType="valueChanged" id="2Ec-4i-8oh"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="horizontal"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ikx-qD-TC1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IH4-4A-6gi" secondAttribute="bottom" constant="8" id="fNN-0T-GkO"/>
+                            <constraint firstItem="ikx-qD-TC1" firstAttribute="centerY" secondItem="d2w-19-UH6" secondAttribute="centerY" priority="750" id="n6e-c3-chO"/>
+                            <constraint firstItem="ikx-qD-TC1" firstAttribute="centerX" secondItem="d2w-19-UH6" secondAttribute="centerX" id="v7U-Sk-59P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="x9U-6J-PjT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CAScrollLayer" id="GOV-ew-1Cl"/>
+                    <connections>
+                        <outlet property="horizontalScrollingSwitch" destination="EUm-Hw-A5y" id="CEm-z8-3Rn"/>
+                        <outlet property="scrollingView" destination="Tg8-DJ-QxN" id="zLf-2J-atu"/>
+                        <outlet property="verticalScrollingSwitch" destination="QpE-9H-R89" id="Wur-jd-ANm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1tF-ye-T95" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="6HF-aB-WSH">
+                    <connections>
+                        <action selector="panRecognized:" destination="pav-ag-75p" id="0MS-hi-YY6"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1640" y="1226"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cresentEarthRisesAboveLunarHorizon" width="1280" height="1280"/>
+    </resources>
+</document>

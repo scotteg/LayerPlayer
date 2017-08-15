@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F55CD871F43199B0083073D /* GradientLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55CD861F43199B0083073D /* GradientLayerScene.storyboard */; };
+		3F55CD891F431A510083073D /* ScrollLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55CD881F431A510083073D /* ScrollLayerScene.storyboard */; };
+		3F55CD8B1F431B090083073D /* ReplicatorLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55CD8A1F431B090083073D /* ReplicatorLayerScene.storyboard */; };
+		3F55CD8D1F431B670083073D /* EAGLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55CD8C1F431B670083073D /* EAGLayerScene.storyboard */; };
+		3F55CD8F1F431BD50083073D /* TransformLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55CD8E1F431BD50083073D /* TransformLayerScene.storyboard */; };
+		3F55CD911F431BF50083073D /* ShapeLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55CD901F431BF50083073D /* ShapeLayerScene.storyboard */; };
+		3F55CD931F431C2C0083073D /* LayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55CD921F431C2C0083073D /* LayerScene.storyboard */; };
+		3F55CD951F431C690083073D /* TextLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55CD941F431C690083073D /* TextLayerScene.storyboard */; };
+		3F55CD971F431CBC0083073D /* PlayerLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55CD961F431CBC0083073D /* PlayerLayerScene.storyboard */; };
+		3F55CD991F431CE00083073D /* TiledLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55CD981F431CE00083073D /* TiledLayerScene.storyboard */; };
+		3F55CD9B1F431D7C0083073D /* EmitterLayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55CD9A1F431D7C0083073D /* EmitterLayer.storyboard */; };
 		D236BF631BD807D600CD3C4C /* Array+SortUIViewsInPlaceByTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236BF621BD807D600CD3C4C /* Array+SortUIViewsInPlaceByTag.swift */; };
 		D247913C1A36BC6C007AC991 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24791371A36BC6C007AC991 /* AppDelegate.swift */; };
 		D247913D1A36BC6C007AC991 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D24791381A36BC6C007AC991 /* Images.xcassets */; };
@@ -39,6 +50,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F55CD861F43199B0083073D /* GradientLayerScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GradientLayerScene.storyboard; sourceTree = "<group>"; };
+		3F55CD881F431A510083073D /* ScrollLayerScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScrollLayerScene.storyboard; sourceTree = "<group>"; };
+		3F55CD8A1F431B090083073D /* ReplicatorLayerScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReplicatorLayerScene.storyboard; sourceTree = "<group>"; };
+		3F55CD8C1F431B670083073D /* EAGLayerScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EAGLayerScene.storyboard; sourceTree = "<group>"; };
+		3F55CD8E1F431BD50083073D /* TransformLayerScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransformLayerScene.storyboard; sourceTree = "<group>"; };
+		3F55CD901F431BF50083073D /* ShapeLayerScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShapeLayerScene.storyboard; sourceTree = "<group>"; };
+		3F55CD921F431C2C0083073D /* LayerScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LayerScene.storyboard; sourceTree = "<group>"; };
+		3F55CD941F431C690083073D /* TextLayerScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TextLayerScene.storyboard; sourceTree = "<group>"; };
+		3F55CD961F431CBC0083073D /* PlayerLayerScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerLayerScene.storyboard; sourceTree = "<group>"; };
+		3F55CD981F431CE00083073D /* TiledLayerScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TiledLayerScene.storyboard; sourceTree = "<group>"; };
+		3F55CD9A1F431D7C0083073D /* EmitterLayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmitterLayer.storyboard; sourceTree = "<group>"; };
 		D236BF621BD807D600CD3C4C /* Array+SortUIViewsInPlaceByTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+SortUIViewsInPlaceByTag.swift"; sourceTree = "<group>"; };
 		D247910F1A36BB95007AC991 /* LayerPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayerPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24791131A36BB95007AC991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +107,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F55CD851F4319840083073D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3F55CD861F43199B0083073D /* GradientLayerScene.storyboard */,
+				3F55CD881F431A510083073D /* ScrollLayerScene.storyboard */,
+				3F55CD8A1F431B090083073D /* ReplicatorLayerScene.storyboard */,
+				3F55CD8C1F431B670083073D /* EAGLayerScene.storyboard */,
+				3F55CD8E1F431BD50083073D /* TransformLayerScene.storyboard */,
+				3F55CD901F431BF50083073D /* ShapeLayerScene.storyboard */,
+				3F55CD921F431C2C0083073D /* LayerScene.storyboard */,
+				3F55CD941F431C690083073D /* TextLayerScene.storyboard */,
+				3F55CD961F431CBC0083073D /* PlayerLayerScene.storyboard */,
+				3F55CD981F431CE00083073D /* TiledLayerScene.storyboard */,
+				3F55CD9A1F431D7C0083073D /* EmitterLayer.storyboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		D24791061A36BB95007AC991 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +144,7 @@
 		D24791111A36BB95007AC991 /* LayerPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				D24791131A36BB95007AC991 /* Info.plist */,
 				D24791361A36BC4B007AC991 /* Models */,
 				D24791351A36BC42007AC991 /* Views */,
 				D24791341A36BC39007AC991 /* Controllers */,
@@ -117,14 +158,13 @@
 			children = (
 				D24791391A36BC6C007AC991 /* colorfulStreak.m4v */,
 				D24791381A36BC6C007AC991 /* Images.xcassets */,
-				D24791131A36BB95007AC991 /* Info.plist */,
 				D2FECA351BDA4C2C00D9B63A /* LayerPlayer.ttf */,
 				D247913B1A36BC6C007AC991 /* LayerPlayer-Bridging-Header.h */,
 				D236BF621BD807D600CD3C4C /* Array+SortUIViewsInPlaceByTag.swift */,
 				D247913A1A36BC6C007AC991 /* UIImage+TileCutter.swift */,
 				D2FECA311BDA23E100D9B63A /* UITableViewCell+ZeroLayoutMargins.swift */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		D24791341A36BC39007AC991 /* Controllers */ = {
@@ -148,12 +188,13 @@
 				D247914E1A36BC80007AC991 /* CAEmitterLayerViewController.swift */,
 				D247914F1A36BC80007AC991 /* CAEmitterLayerControlsViewController.swift */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		D24791351A36BC42007AC991 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3F55CD851F4319840083073D /* Scenes */,
 				D247915F1A36BC94007AC991 /* Main.storyboard */,
 				D24791601A36BC94007AC991 /* LaunchScreen.xib */,
 				D24791611A36BC94007AC991 /* ScrollingView.swift */,
@@ -161,7 +202,7 @@
 				D24791631A36BC94007AC991 /* TiledLayer.swift */,
 				D24791641A36BC94007AC991 /* TilingViewForImage.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D24791361A36BC4B007AC991 /* Models */ = {
@@ -169,7 +210,7 @@
 			children = (
 				D247916B1A36BC9C007AC991 /* TrackBall.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,7 +246,6 @@
 				TargetAttributes = {
 					D247910E1A36BB95007AC991 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = CX893E63R7;
 						LastSwiftMigration = 0900;
 					};
 				};
@@ -236,8 +276,19 @@
 				D24791661A36BC94007AC991 /* LaunchScreen.xib in Resources */,
 				D2FECA361BDA4C2C00D9B63A /* LayerPlayer.ttf in Resources */,
 				D24791651A36BC94007AC991 /* Main.storyboard in Resources */,
+				3F55CD931F431C2C0083073D /* LayerScene.storyboard in Resources */,
 				D247913D1A36BC6C007AC991 /* Images.xcassets in Resources */,
+				3F55CD9B1F431D7C0083073D /* EmitterLayer.storyboard in Resources */,
+				3F55CD8F1F431BD50083073D /* TransformLayerScene.storyboard in Resources */,
+				3F55CD971F431CBC0083073D /* PlayerLayerScene.storyboard in Resources */,
 				D247913E1A36BC6C007AC991 /* colorfulStreak.m4v in Resources */,
+				3F55CD951F431C690083073D /* TextLayerScene.storyboard in Resources */,
+				3F55CD891F431A510083073D /* ScrollLayerScene.storyboard in Resources */,
+				3F55CD991F431CE00083073D /* TiledLayerScene.storyboard in Resources */,
+				3F55CD8B1F431B090083073D /* ReplicatorLayerScene.storyboard in Resources */,
+				3F55CD911F431BF50083073D /* ShapeLayerScene.storyboard in Resources */,
+				3F55CD871F43199B0083073D /* GradientLayerScene.storyboard in Resources */,
+				3F55CD8D1F431B670083073D /* EAGLayerScene.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,9 +438,10 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LayerPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.optimacinc.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razerware.LayerPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -407,9 +459,10 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LayerPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.optimacinc.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razerware.LayerPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
