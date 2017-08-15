@@ -41,12 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     UILabel.appearance().font = UIFont(name: "Avenir-Light", size: 17.0)
     UILabel.appearance(whenContainedInInstancesOf: [UITableViewCell.self]).font = UIFont(name: "Avenir-light", size: 14.0)
-    UIControl.appearance().tintColor = lighterSwiftOrangeColor
     UINavigationBar.appearance().tintColor = UIColor.white
     UINavigationBar.appearance().barTintColor = swiftOrangeColor
     UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "Avenir-light", size: 20.0)!]
     UITableView.appearance().separatorColor = swiftOrangeColor
     UITableViewCell.appearance().separatorInset = UIEdgeInsets.zero
+    UISwitch.appearance().tintColor = swiftOrangeColor
+    UISlider.appearance().tintColor = swiftOrangeColor
+    UISegmentedControl.appearance().tintColor = swiftOrangeColor
     
     let splitViewController = window!.rootViewController as! UISplitViewController
     
