@@ -33,8 +33,8 @@ class CAEmitterLayerViewController: UIViewController {
   
   @IBOutlet weak var viewForEmitterLayer: UIView!
   
-  @objc dynamic var emitterLayer = CAEmitterLayer()
-  @objc dynamic var emitterCell = CAEmitterCell()
+  @objc var emitterLayer = CAEmitterLayer()
+  @objc var emitterCell = CAEmitterCell()
   
   // MARK: - Quick reference
   
